@@ -223,54 +223,54 @@ const manifest = {
     "$live/sections/PageInclude.tsx": i2$$$$$2,
     "$live/sections/Slot.tsx": i2$$$$$3,
     "$live/sections/UseSlot.tsx": i2$$$$$4,
-    "deco-sites/boilerplaten1/sections/Category/CategoryBanner.tsx": $$$$$$$$2,
-    "deco-sites/boilerplaten1/sections/Category/CategoryBreadcrumb.tsx":
+    "deco-sites/euro-site/sections/Category/CategoryBanner.tsx": $$$$$$$$2,
+    "deco-sites/euro-site/sections/Category/CategoryBreadcrumb.tsx":
       $$$$$$$$4,
-    "deco-sites/boilerplaten1/sections/Category/CategoryList.tsx": $$$$$$$$3,
-    "deco-sites/boilerplaten1/sections/Category/CategoryText.tsx": $$$$$$$$5,
-    "deco-sites/boilerplaten1/sections/Container.tsx": $$$$$$$$6,
-    "deco-sites/boilerplaten1/sections/Content/Benefits.tsx": $$$$$$$$22,
-    "deco-sites/boilerplaten1/sections/Content/CopyRight.tsx": $$$$$$$$17,
-    "deco-sites/boilerplaten1/sections/Content/Faq.tsx": $$$$$$$$21,
-    "deco-sites/boilerplaten1/sections/Content/InfoCard.tsx": $$$$$$$$18,
-    "deco-sites/boilerplaten1/sections/Content/Logos.tsx": $$$$$$$$20,
-    "deco-sites/boilerplaten1/sections/Content/Testimonials.tsx": $$$$$$$$19,
-    "deco-sites/boilerplaten1/sections/DesignSystem/DesignSystem.tsx":
+    "deco-sites/euro-site/sections/Category/CategoryList.tsx": $$$$$$$$3,
+    "deco-sites/euro-site/sections/Category/CategoryText.tsx": $$$$$$$$5,
+    "deco-sites/euro-site/sections/Container.tsx": $$$$$$$$6,
+    "deco-sites/euro-site/sections/Content/Benefits.tsx": $$$$$$$$22,
+    "deco-sites/euro-site/sections/Content/CopyRight.tsx": $$$$$$$$17,
+    "deco-sites/euro-site/sections/Content/Faq.tsx": $$$$$$$$21,
+    "deco-sites/euro-site/sections/Content/InfoCard.tsx": $$$$$$$$18,
+    "deco-sites/euro-site/sections/Content/Logos.tsx": $$$$$$$$20,
+    "deco-sites/euro-site/sections/Content/Testimonials.tsx": $$$$$$$$19,
+    "deco-sites/euro-site/sections/DesignSystem/DesignSystem.tsx":
       $$$$$$$$1,
-    "deco-sites/boilerplaten1/sections/Footer/Footer.tsx": $$$$$$$$0,
-    "deco-sites/boilerplaten1/sections/Header/HeaderLayout.tsx": $$$$$$$$36,
-    "deco-sites/boilerplaten1/sections/Header/TopNavBar.tsx": $$$$$$$$37,
-    "deco-sites/boilerplaten1/sections/Images/BannerGrid.tsx": $$$$$$$$8,
-    "deco-sites/boilerplaten1/sections/Images/Carousel.tsx": $$$$$$$$10,
-    "deco-sites/boilerplaten1/sections/Images/ImageGallery.tsx": $$$$$$$$9,
-    "deco-sites/boilerplaten1/sections/Images/ShoppableBanner.tsx": $$$$$$$$7,
-    "deco-sites/boilerplaten1/sections/Institutional/AccordionsContent.tsx":
+    "deco-sites/euro-site/sections/Footer/Footer.tsx": $$$$$$$$0,
+    "deco-sites/euro-site/sections/Header/HeaderLayout.tsx": $$$$$$$$36,
+    "deco-sites/euro-site/sections/Header/TopNavBar.tsx": $$$$$$$$37,
+    "deco-sites/euro-site/sections/Images/BannerGrid.tsx": $$$$$$$$8,
+    "deco-sites/euro-site/sections/Images/Carousel.tsx": $$$$$$$$10,
+    "deco-sites/euro-site/sections/Images/ImageGallery.tsx": $$$$$$$$9,
+    "deco-sites/euro-site/sections/Images/ShoppableBanner.tsx": $$$$$$$$7,
+    "deco-sites/euro-site/sections/Institutional/AccordionsContent.tsx":
       $$$$$$$$14,
-    "deco-sites/boilerplaten1/sections/Institutional/AsideMenu.tsx": $$$$$$$$13,
-    "deco-sites/boilerplaten1/sections/Institutional/CardsContent.tsx":
+    "deco-sites/euro-site/sections/Institutional/AsideMenu.tsx": $$$$$$$$13,
+    "deco-sites/euro-site/sections/Institutional/CardsContent.tsx":
       $$$$$$$$11,
-    "deco-sites/boilerplaten1/sections/Institutional/ContactForm.tsx":
+    "deco-sites/euro-site/sections/Institutional/ContactForm.tsx":
       $$$$$$$$15,
-    "deco-sites/boilerplaten1/sections/Institutional/InstitutionalPage.tsx":
+    "deco-sites/euro-site/sections/Institutional/InstitutionalPage.tsx":
       $$$$$$$$12,
-    "deco-sites/boilerplaten1/sections/Institutional/TextContent.tsx":
+    "deco-sites/euro-site/sections/Institutional/TextContent.tsx":
       $$$$$$$$16,
-    "deco-sites/boilerplaten1/sections/Links/LinkTree.tsx": $$$$$$$$32,
-    "deco-sites/boilerplaten1/sections/Links/Shortcuts.tsx": $$$$$$$$33,
-    "deco-sites/boilerplaten1/sections/Miscellaneous/CampaignTimer.tsx":
+    "deco-sites/euro-site/sections/Links/LinkTree.tsx": $$$$$$$$32,
+    "deco-sites/euro-site/sections/Links/Shortcuts.tsx": $$$$$$$$33,
+    "deco-sites/euro-site/sections/Miscellaneous/CampaignTimer.tsx":
       $$$$$$$$27,
-    "deco-sites/boilerplaten1/sections/Miscellaneous/CookieConsent.tsx":
+    "deco-sites/euro-site/sections/Miscellaneous/CookieConsent.tsx":
       $$$$$$$$28,
-    "deco-sites/boilerplaten1/sections/Miscellaneous/NotFound.tsx": $$$$$$$$29,
-    "deco-sites/boilerplaten1/sections/Newsletter/Newsletter.tsx": $$$$$$$$34,
-    "deco-sites/boilerplaten1/sections/Newsletter/NewsletterModal.tsx":
+    "deco-sites/euro-site/sections/Miscellaneous/NotFound.tsx": $$$$$$$$29,
+    "deco-sites/euro-site/sections/Newsletter/Newsletter.tsx": $$$$$$$$34,
+    "deco-sites/euro-site/sections/Newsletter/NewsletterModal.tsx":
       $$$$$$$$35,
-    "deco-sites/boilerplaten1/sections/Product/ProductDetails.tsx": $$$$$$$$26,
-    "deco-sites/boilerplaten1/sections/Product/ProductShelf.tsx": $$$$$$$$25,
-    "deco-sites/boilerplaten1/sections/Product/SearchResult.tsx": $$$$$$$$24,
-    "deco-sites/boilerplaten1/sections/Product/Wishlist.tsx": $$$$$$$$23,
-    "deco-sites/boilerplaten1/sections/Social/InstagramPosts.tsx": $$$$$$$$31,
-    "deco-sites/boilerplaten1/sections/Social/WhatsApp.tsx": $$$$$$$$30,
+    "deco-sites/euro-site/sections/Product/ProductDetails.tsx": $$$$$$$$26,
+    "deco-sites/euro-site/sections/Product/ProductShelf.tsx": $$$$$$$$25,
+    "deco-sites/euro-site/sections/Product/SearchResult.tsx": $$$$$$$$24,
+    "deco-sites/euro-site/sections/Product/Wishlist.tsx": $$$$$$$$23,
+    "deco-sites/euro-site/sections/Social/InstagramPosts.tsx": $$$$$$$$31,
+    "deco-sites/euro-site/sections/Social/WhatsApp.tsx": $$$$$$$$30,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$$5,
     "deco-sites/std/sections/configButterCMS.global.tsx": i2$$$$$6,
     "deco-sites/std/sections/configNuvemShop.tsx": i2$$$$$7,
