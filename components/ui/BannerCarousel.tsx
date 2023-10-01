@@ -152,15 +152,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
             title={action.title}
           />
 
-          <Button
-            class={`max-md:text-sm m-auto btn border-none text-white capitalize font-medium text-base w-fit px-16 btn-${
-              action.variant
-                ? BUTTON_VARIANTS[action.variant]
-                : BUTTON_VARIANTS["primary"]
-            }`}
-          >
-            {action.label}
-          </Button>
+          
         </div>
       )}
     </a>
