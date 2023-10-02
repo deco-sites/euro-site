@@ -39,7 +39,7 @@ export interface Banner {
    */
   action?: {
     /** @description when user clicks on the image, go to this link */
-    // href?: string;
+    href?: string;
     /** @description Image text title */
     title?: string;
     /** @description Mobile title */
@@ -107,11 +107,11 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
   } = image;
 
   return (
-    // <a
-    //   href={action?.href ?? "#"}
-    //   aria-label={action?.label}
-    //   class="relative h-[600px] overflow-y-hidden w-full"
-    // >
+    <a
+      href={action?.href ?? "#"}
+      aria-label={action?.label}
+      class="relative h-[600px] overflow-y-hidden w-full"
+    >
       <Picture preload={lcp}>
         <Source
           media="(max-width: 767px)"
@@ -130,8 +130,6 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
         <img
           class="object-cover w-full h-full"
           loading={lcp ? "eager" : "lazy"}
-          width={1920}
-          height={600}
           src={desktop}
           alt={alt}
         />
