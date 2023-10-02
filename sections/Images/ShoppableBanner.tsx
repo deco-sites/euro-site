@@ -49,7 +49,7 @@ export default function ShoppableBanner(props: Props) {
 
   return (
     <div class="container">
-      <div class="card lg:card-side rounded grid grid-cols-1 lg:grid-cols-[50%_50%]">
+      <div class="card pd-card lg:card-side rounded grid grid-cols-1 lg:grid-cols-[50%_50%]">
         <figure class="relative">
           <Picture>
             <Source
