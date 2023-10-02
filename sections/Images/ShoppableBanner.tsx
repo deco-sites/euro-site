@@ -100,7 +100,7 @@ export default function ShoppableBanner(props: Props) {
         </figure>
         <div class="card-body card-linhas">
           <h2 class="card-title title-linhas">{title}</h2>
-          <p>{text}</p>
+          <p class="text-linhas">{text}</p>
           <div class="card-actions justify-center">
             <a class="btn btn-primary" href={link?.href}>{link?.text}</a>
           </div>
