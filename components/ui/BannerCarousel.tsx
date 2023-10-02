@@ -130,6 +130,8 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
         <img
           class="object-cover w-full h-full"
           loading={lcp ? "eager" : "lazy"}
+          width={1920}
+          height={600}
           src={desktop}
           alt={alt}
         />
