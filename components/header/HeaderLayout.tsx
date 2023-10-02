@@ -36,7 +36,7 @@ function HeaderLayout(
         <div class="flex items-center gap-5">
           <Buttons variant="menu" />
           <a href="/" class="" aria-label="Store logo">
-            <Icon id="Logo" width={120} height={27} />
+            <Icon id="Logo" width={120} height={50} />
           </a>
         </div>
         <div class="max-lg:hidden flex justify-between">
