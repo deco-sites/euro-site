@@ -10,7 +10,7 @@ import { useOffer } from "$store/sdk/useOffer.ts";
 import { formatPrice } from "$store/sdk/format.ts";
 import { SendEventOnLoad } from "$store/sdk/analytics.tsx";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
-import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
+import type { ProductDetailsPage } from "apps/commerce/types.ts";
 import type { LoaderReturnType } from "$live/types.ts";
 import AddToCartActions from "$store/islands/AddToCartActions.tsx";
 import Icon from "$store/components/ui/Icon.tsx";

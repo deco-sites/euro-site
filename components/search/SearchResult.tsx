@@ -5,7 +5,7 @@ import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/product
 import { useOffer } from "$store/sdk/useOffer.ts";
 import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
 import type { LoaderReturnType } from "$live/types.ts";
-import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
+import type { ProductListingPage } from "apps/commerce/types.ts";
 import Sort from "$store/islands/Sort.tsx";
 import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
 import SearchPagination from "$store/components/search/SearchPagination.tsx";
