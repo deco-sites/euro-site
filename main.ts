@@ -4,18 +4,13 @@
 /// <reference lib="esnext" />
 
 import { start } from "$fresh/server.ts";
-import plugins from "deco-sites/std/plugins/mod.ts";
+import { $live } from "$live/mod.ts";
 import partytownPlugin from "partytown/mod.ts";
-import manifest from "./fresh.gen.ts";
-import decoManifest from "./manifest.gen.ts";
+import manifest from "./live.gen.ts";
+import site from "./site.json" assert { type: "json" };
 
-await start(manifest, {
+await start($live(manifest, site), {
   plugins: [
-    ...plugins(
-      {
-        manifest: decoManifest,
-      },
-    ),
     partytownPlugin(),
   ],
 });
