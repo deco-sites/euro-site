@@ -217,7 +217,7 @@ function Buttons({ className }: ButtonsProps) {
       >
         <Slider.PrevButton class="btn btn-circle border-none bg-opacity-10 bg-white hover:bg-white hover:bg-opacity-20">
           <Icon
-            class="text-base-100"
+            class="text-blue"
             size={40}
             id="ChevronLeft"
             strokeWidth={3}
@@ -229,7 +229,7 @@ function Buttons({ className }: ButtonsProps) {
       >
         <Slider.NextButton class="btn btn-circle border-none bg-opacity-10 bg-white hover:bg-white hover:bg-opacity-20">
           <Icon
-            class="text-base-100"
+            class="text-blue"
             size={40}
             id="ChevronRight"
             strokeWidth={3}
