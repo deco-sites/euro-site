@@ -1,26 +1,26 @@
 import { Head } from "$fresh/runtime.ts";
 import { Section } from "$live/blocks/section.ts";
 import type { BlockInstance } from "$live/engine/block.ts";
-import type { Manifest } from "deco-sites/boilerplaten1/live.gen.ts";
+import type { Manifest } from "deco-sites/boilerplaten1/manifest.gen.ts";
 
 export interface Props {
   title: string;
   asideMenu: Section;
   content:
     | BlockInstance<
-      "deco-sites/boilerplaten1/sections/Institutional/TextContent.tsx",
+      "deco-sites/euro-site/sections/Institutional/TextContent.tsx",
       Manifest
     >
     | BlockInstance<
-      "deco-sites/boilerplaten1/sections/Institutional/AccordionsContent.tsx",
+      "deco-sites/euro-site/sections/Institutional/AccordionsContent.tsx",
       Manifest
     >
     | BlockInstance<
-      "deco-sites/boilerplaten1/sections/Institutional/CardsContent.tsx",
+      "deco-sites/euro-site/sections/Institutional/CardsContent.tsx",
       Manifest
     >
     | BlockInstance<
-      "deco-sites/boilerplaten1/sections/Institutional/ContactForm.tsx",
+      "deco-sites/euro-site/sections/Institutional/ContactForm.tsx",
       Manifest
     >;
 }

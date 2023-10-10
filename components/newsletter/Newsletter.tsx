@@ -2,13 +2,9 @@ import {
   BUTTON_VARIANTS,
   ButtonVariant,
 } from "$store/components/minicart/Cart.tsx";
-import { Runtime } from "$store/runtime.ts";
+import { invoke } from "$store/runtime.ts";
 import { useSignal } from "@preact/signals";
 import type { JSX } from "preact";
-
-const subscribe = Runtime.create(
-  "deco-sites/std/actions/vtex/newsletter/subscribe.ts",
-);
 
 export interface INewsletterInputProps {
   /**
@@ -92,7 +88,7 @@ function Form(props: Props) {
           ?.value;
       }
 
-      await subscribe({ email, name });
+      await invoke.vtex.actions.newsletter.subscribe({ email, name });
     } finally {
       loading.value = false;
       success.value = true;
