@@ -17,7 +17,7 @@ import Slider from "$store/components/ui/Slider.tsx";
 import Spinner from "$store/components/ui/Spinner.tsx";
 import { sendEvent } from "$store/sdk/analytics.tsx";
 import { useUI } from "$store/sdk/useUI.ts";
-import { useAutocomplete } from "apps/vtex/hooks/useAutocomplete.ts";
+import { useAutocomplete } from "deco-sites/std/packs/vtex/hooks/useAutocomplete.ts";
 import { useEffect, useRef } from "preact/compat";
 
 function CloseButton() {

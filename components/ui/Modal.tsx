@@ -7,11 +7,9 @@ import { useEffect, useRef } from "preact/hooks";
 
 // Lazy load a <dialog> polyfill.
 if (IS_BROWSER && typeof window.HTMLDialogElement === "undefined") {
-  (async () => {
-    await import(
-      "https://raw.githubusercontent.com/GoogleChrome/dialog-polyfill/5033aac1b74c44f36cde47be3d11f4756f3f8fda/dist/dialog-polyfill.esm.js"
-    );
-  })();
+  await import(
+    "https://raw.githubusercontent.com/GoogleChrome/dialog-polyfill/5033aac1b74c44f36cde47be3d11f4756f3f8fda/dist/dialog-polyfill.esm.js"
+  );
 }
 
 export type Props = JSX.IntrinsicElements["dialog"] & {
