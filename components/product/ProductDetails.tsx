@@ -87,7 +87,7 @@ function ProductInfo(
       <div class="mt-4 sm:mt-0">
         <h1>
           <span class="font-medium text-base-content text-2xl">
-            {isVariantOf?.name}
+            {name}
           </span>
         </h1>
         <div>
