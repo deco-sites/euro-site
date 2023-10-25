@@ -32,27 +32,27 @@ export interface Props {
    */
   navItems?: NavItem[];
 
-  /**
-   * @title Product suggestions
-   * @description Product suggestions displayed on search
-   */
-  products?: LoaderReturnType<Product[] | null>;
+  // /**
+  //  * @title Product suggestions
+  //  * @description Product suggestions displayed on search
+  //  */
+  // products?: LoaderReturnType<Product[] | null>;
 
-  /**
-   * @title Enable Top Search terms
-   */
-  suggestions?: LoaderReturnType<Suggestion | null>;
+  // /**
+  //  * @title Enable Top Search terms
+  //  */
+  // suggestions?: LoaderReturnType<Suggestion | null>;
 }
 
 function Header(
   {
     searchbar: _searchbar,
-    products,
+    // products,
     navItems = [],
-    suggestions,
+    // suggestions,
   }: Props,
 ) {
-  const searchbar = { ..._searchbar, products, suggestions };
+  const searchbar = { ..._searchbar};
   return (
     <>
       <header style={{ height: headerHeight }}>
