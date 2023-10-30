@@ -38,6 +38,24 @@
             d="M2 3H5.63636L8.07273 14.6044C8.15586 15.0034 8.38355 15.3618 8.71595 15.6169C9.04835 15.872 9.46427 16.0075 9.89091 15.9997H18.7273C19.1539 16.0075 19.5698 15.872 19.9022 15.6169C20.2346 15.3618 20.4623 15.0034 20.5455 14.6044L22 7.33323H6.54545"
             stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
     </symbol>
+    <symbol id="Fast" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Retângulo_578" data-name="Retângulo 578" width="30" height="30" transform="translate(1069 1326)" fill="#f4ac1c" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="Retângulo_580" data-name="Retângulo 580" width="17.248" height="25.825" fill="#f4ac1c"/>
+    </clipPath>
+  </defs>
+  <g id="icon-eod-rapido-e-facil-desktop" transform="translate(-1069 -1326)" clip-path="url(#clip-path)">
+    <g id="Grupo_1628" data-name="Grupo 1628" transform="translate(1075.188 1328.088)">
+      <g id="Grupo_1628-2" data-name="Grupo 1628" clip-path="url(#clip-path-2)">
+        <path id="Caminho_2160" data-name="Caminho 2160" d="M7.822,25.825A2.434,2.434,0,0,1,6.8,25.6a2.346,2.346,0,0,1-1.291-2.821l1.68-5.559H3.233A3.228,3.228,0,0,1,.139,13.053L3.393,2.293A3.21,3.21,0,0,1,6.488,0h3.974A2.8,2.8,0,0,1,13.08,3.778l-1.811,4.83H14.02a3.228,3.228,0,0,1,2.672,5.04L9.805,24.732a2.367,2.367,0,0,1-1.983,1.093M6.488,2.152a1.076,1.076,0,0,0-1.031.764L2.2,13.676a1.076,1.076,0,0,0,1.03,1.388H8.64a1.076,1.076,0,0,1,1.03,1.388L7.575,23.384a.2.2,0,0,0,.114.254l.016.005a.2.2,0,0,0,.279-.061l.01-.017,6.887-11.083a1.076,1.076,0,0,0,.084-1.144,1.053,1.053,0,0,0-.945-.578h-4.3A1.076,1.076,0,0,1,8.708,9.307l2.357-6.284a.646.646,0,0,0-.6-.871Z" transform="translate(-0.001 0)" fill="#f4ac1c"/>
+      </g>
+    </g>
+  </g>
+</symbol>
+
     <symbol id="Refresh" viewBox="0 0 24 24" fill="none"
         xmlns="http://www.w3.org/2000/svg">
         <path d="M3 2V8H9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -283,6 +301,25 @@
             stroke-linejoin="round" />
     </symbol>
     <symbol id="Rapido" xmlns="http://www.w3.org/2000/svg" width="30" height="30"><defs><clipPath id="a"><path fill="#f4ac1c" stroke="#707070" d="M1069 1326h30v30h-30z" data-name="Retângulo 578"/></clipPath><clipPath id="b"><path fill="#f4ac1c" d="M0 0h17.248v25.825H0z" data-name="Retângulo 580"/></clipPath></defs><g clip-path="url(#a)" transform="translate(-1069 -1326)"><g clip-path="url(#b)" data-name="Grupo 1628" transform="translate(1075.188 1328.088)"><path fill="#f4ac1c" d="M7.821 25.825a2.434 2.434 0 0 1-1.022-.225 2.346 2.346 0 0 1-1.291-2.821l1.68-5.559H3.232a3.228 3.228 0 0 1-3.094-4.167l3.254-10.76A3.21 3.21 0 0 1 6.487 0h3.974a2.8 2.8 0 0 1 2.618 3.778l-1.811 4.83h2.751a3.228 3.228 0 0 1 2.672 5.04L9.804 24.732a2.367 2.367 0 0 1-1.983 1.093M6.487 2.152a1.076 1.076 0 0 0-1.031.764l-3.257 10.76a1.076 1.076 0 0 0 1.03 1.388h5.41a1.076 1.076 0 0 1 1.03 1.388l-2.095 6.932a.2.2 0 0 0 .114.254l.016.005a.2.2 0 0 0 .279-.061l.01-.017 6.887-11.083a1.076 1.076 0 0 0 .084-1.144 1.053 1.053 0 0 0-.945-.578h-4.3a1.076 1.076 0 0 1-1.012-1.453l2.357-6.284a.646.646 0 0 0-.6-.871Z" data-name="Caminho 2160"/></g></g></symbol>
+
+    <symbol id="Fast" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Retângulo_578" data-name="Retângulo 578" width="30" height="30" transform="translate(1069 1326)" fill="#f4ac1c" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="Retângulo_580" data-name="Retângulo 580" width="17.248" height="25.825" fill="#f4ac1c"/>
+    </clipPath>
+  </defs>
+  <g id="icon-eod-rapido-e-facil-desktop" transform="translate(-1069 -1326)" clip-path="url(#clip-path)">
+    <g id="Grupo_1628" data-name="Grupo 1628" transform="translate(1075.188 1328.088)">
+      <g id="Grupo_1628-2" data-name="Grupo 1628" clip-path="url(#clip-path-2)">
+        <path id="Caminho_2160" data-name="Caminho 2160" d="M7.822,25.825A2.434,2.434,0,0,1,6.8,25.6a2.346,2.346,0,0,1-1.291-2.821l1.68-5.559H3.233A3.228,3.228,0,0,1,.139,13.053L3.393,2.293A3.21,3.21,0,0,1,6.488,0h3.974A2.8,2.8,0,0,1,13.08,3.778l-1.811,4.83H14.02a3.228,3.228,0,0,1,2.672,5.04L9.805,24.732a2.367,2.367,0,0,1-1.983,1.093M6.488,2.152a1.076,1.076,0,0,0-1.031.764L2.2,13.676a1.076,1.076,0,0,0,1.03,1.388H8.64a1.076,1.076,0,0,1,1.03,1.388L7.575,23.384a.2.2,0,0,0,.114.254l.016.005a.2.2,0,0,0,.279-.061l.01-.017,6.887-11.083a1.076,1.076,0,0,0,.084-1.144,1.053,1.053,0,0,0-.945-.578h-4.3A1.076,1.076,0,0,1,8.708,9.307l2.357-6.284a.646.646,0,0,0-.6-.871Z" transform="translate(-0.001 0)" fill="#f4ac1c"/>
+      </g>
+    </g>
+  </g>
+</symbol>
+
     <symbol id="ArrowLeft" viewBox="0 0 24 24" fill="none"
         xmlns="http://www.w3.org/2000/svg">
         <path d="M19 12H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
