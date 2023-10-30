@@ -56,7 +56,10 @@ export type AvailableIcons =
   | "checkIcon"
   | "SearchBar"
   | "ArrowRight"
-  | "Fast";
+  | "Fast"
+  | "Flex"
+  | "Diamond"
+  | "Chat";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**
