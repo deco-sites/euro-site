@@ -25,6 +25,7 @@
             d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
             stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
     </symbol>
+    <symbol id="Rapido" xmlns="http://www.w3.org/2000/svg" width="30" height="30"><defs><clipPath id="a"><path fill="#f4ac1c" stroke="#707070" d="M1069 1326h30v30h-30z" data-name="Retângulo 578"/></clipPath><clipPath id="b"><path fill="#f4ac1c" d="M0 0h17.248v25.825H0z" data-name="Retângulo 580"/></clipPath></defs><g clip-path="url(#a)" transform="translate(-1069 -1326)"><g clip-path="url(#b)" data-name="Grupo 1628" transform="translate(1075.188 1328.088)"><path fill="#f4ac1c" d="M7.821 25.825a2.434 2.434 0 0 1-1.022-.225 2.346 2.346 0 0 1-1.291-2.821l1.68-5.559H3.232a3.228 3.228 0 0 1-3.094-4.167l3.254-10.76A3.21 3.21 0 0 1 6.487 0h3.974a2.8 2.8 0 0 1 2.618 3.778l-1.811 4.83h2.751a3.228 3.228 0 0 1 2.672 5.04L9.804 24.732a2.367 2.367 0 0 1-1.983 1.093M6.487 2.152a1.076 1.076 0 0 0-1.031.764l-3.257 10.76a1.076 1.076 0 0 0 1.03 1.388h5.41a1.076 1.076 0 0 1 1.03 1.388l-2.095 6.932a.2.2 0 0 0 .114.254l.016.005a.2.2 0 0 0 .279-.061l.01-.017 6.887-11.083a1.076 1.076 0 0 0 .084-1.144 1.053 1.053 0 0 0-.945-.578h-4.3a1.076 1.076 0 0 1-1.012-1.453l2.357-6.284a.646.646 0 0 0-.6-.871Z" data-name="Caminho 2160"/></g></g></symbol>
     <symbol id="ShoppingCart" viewBox="0 0 24 24" fill="none"
         xmlns="http://www.w3.org/2000/svg">
         <path
