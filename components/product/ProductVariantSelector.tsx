@@ -36,7 +36,7 @@ function VariantSelector({ product, product: { url } }: Props) {
             {Object.entries(possibilities[name]).map((
               [value, { urls, inStock }],
             ) => (
-              <li class={`p-2 rounded-sm ${urls[0] === url ? "bg-[#344D66] text-white" : "bg-white text-[#344D66]"}`}>
+              <li class={`p-2 rounded-sm ${urls[0] === url ? "bg-primary text-white" : "bg-white text-[#344D66]"}`}>
                 <a href={urls[0]}>
                   {value}
                 </a>
