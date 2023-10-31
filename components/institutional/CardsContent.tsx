@@ -1,57 +1,57 @@
-import Icon, {
-  AvailableIcons,
-  PaymentIcons,
-  SocialIcons,
-} from "$store/components/ui/Icon.tsx";
-
 export interface Props {
   cards: {
     heading: {
       title: string;
-      icon?: AvailableIcons | SocialIcons | PaymentIcons;
     };
     content: {
       subtitle?: string;
-      paragraphs?: string[];
+      paragraphs?: string;
     };
     links: {
       label: string;
       url: string;
-      icon?: AvailableIcons | SocialIcons | PaymentIcons;
+    }[];
+    // Adicione este novo campo para aceitar as cidades
+    cidades: {
+      nome: string;
+      endereco: string;
+      cidade: string;
+      estado: string;
+      telefone: {
+        label: string;
+        url: string;
+      };
+      mapa: string;
     }[];
   }[];
+  
 }
 
 function CardsContent({ cards }: Props) {
   return (
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-[30px] pb-12">
+    <div class="grid grid-cols-1 gap-[48px] mt-8 overflow-hidden hover:overflow-y-auto">
       {cards.map((card) => (
-        <div class="card card-bordered border-2 border-neutral-100">
-          <div class="card-body">
-            <div class="flex items-center gap-[10px] h-6 text-emphasis">
-              <Icon id={card.heading.icon ?? "MapPin"} width={24} height={24} />
-              <h6 class="font-medium">{card.heading.title}</h6>
+          <div class="card-body p-0 gap-3">
+            <div class="flex items-center h-6 text-[#174C67]">
+              {/* <Icon id={card.heading.icon ?? "MapPin"} width={24} height={24} /> */}
+              <h6 class="font-medium text-[18px]">{card.heading.title}</h6>
             </div>
-            <div class="flex flex-col gap-[2px] text-sm text-base-300">
-              <span class="font-bold">{card.content.subtitle}</span>
-              {card.content.paragraphs &&
-                card.content.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
-            </div>
-            <div class="flex flex-col gap-[6px] items-start font-bold text-base-content">
-              {card.links.map((link) => (
-                <a href={link.url} class="flex items-center gap-[10px] text-sm">
-                  <Icon
-                    id={link.icon ?? "Phone"}
-                    width={18}
-                    height={18}
-                    strokeWidth={2}
-                  />
-                  <span>{link.label}</span>
-                </a>
-              ))}
+            <div className="flex flex-col">
+              <div class="flex flex-row text-[16px] text-[#66628C]">
+                {/* <span class="font-bold">{card.content.subtitle}</span> */}
+                <p>{card.content.paragraphs}</p>
+              </div>
+              <div class="flex flex-row gap-[6px] items-center font-bold text-[#66628C] text-[16px]">
+              <span class="font-medium">{"Telefone:"}</span>
+                {card.links.map((link) => (
+                  <a href={link.url} class="font-normal flex gap-[10px] text-[16px]">
+                    <span>{link.label}</span>
+                  </a>
+                ))}
+              </div>
+              <a href="" class="font-medium text-[#66628C]">Ver no Mapa</a>
             </div>
           </div>
-        </div>
       ))}
     </div>
   );

@@ -48,6 +48,7 @@
               "$live/loaders/state.ts",
               "$live/loaders/workflows/events.ts",
               "$live/loaders/workflows/get.ts",
+              "deco-sites/euro-site/loaders/NossasLojas.tsx",
               "deco-sites/std/loaders/nuvemShop/nuvemShopProductDetailsPage.ts",
               "deco-sites/std/loaders/nuvemShop/nuvemShopProductList.ts",
               "deco-sites/std/loaders/nuvemShop/nuvemShopProductListingPage.ts",
@@ -71,6 +72,7 @@
               "./islands/HeaderButton.tsx",
               "./islands/HeaderModals.tsx",
               "./islands/HeaderSearchbar.tsx",
+              "./islands/InstitutionalPage.tsx",
               "./islands/Newsletter.tsx",
               "./islands/NewsletterModal.tsx",
               "./islands/OutOfStock.tsx",
@@ -112,8 +114,10 @@
               "deco-sites/euro-site/sections/Images/BannerGrid.tsx",
               "deco-sites/euro-site/sections/Images/Carousel.tsx",
               "deco-sites/euro-site/sections/Images/ImageGallery.tsx",
+              "deco-sites/euro-site/sections/Images/ShopabbleBannerLeft.tsx",
               "deco-sites/euro-site/sections/Images/ShoppableBanner.tsx",
-              "deco-sites/euro-site/sections/Images/ShoppableBanner2.tsx",
+              "deco-sites/euro-site/sections/Images/ShoppableBannerNovo.tsx",
+              "deco-sites/euro-site/sections/Images/ShoppableBannerRight.tsx",
               "deco-sites/euro-site/sections/Institutional/AccordionsContent.tsx",
               "deco-sites/euro-site/sections/Institutional/AsideMenu.tsx",
               "deco-sites/euro-site/sections/Institutional/CardsContent.tsx",
@@ -3980,6 +3984,74 @@
       ],
       "title": "deco-cx/live/loaders/workflows/get.ts@Props"
     },
+    "ZGVjby1zaXRlcy9ldXJvLXNpdGUvY29tcG9uZW50cy9pbnN0aXR1dGlvbmFsL0luc3RpdHV0aW9uYWxQYWdlLnRzeA==@Store": {
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "string",
+          "title": "Nome"
+        },
+        "endereco": {
+          "type": "string",
+          "title": "Endereco"
+        },
+        "cidade": {
+          "type": "string",
+          "title": "Cidade"
+        },
+        "estado": {
+          "type": "string",
+          "title": "Estado"
+        },
+        "contato": {
+          "type": "string",
+          "title": "Contato"
+        },
+        "mapa": {
+          "type": "string",
+          "title": "Mapa"
+        }
+      },
+      "required": [
+        "nome",
+        "endereco",
+        "cidade",
+        "estado",
+        "contato",
+        "mapa"
+      ],
+      "title": "Store"
+    },
+    "ZGVjby1zaXRlcy9ldXJvLXNpdGUvY29tcG9uZW50cy9pbnN0aXR1dGlvbmFsL0luc3RpdHV0aW9uYWxQYWdlLnRzeA==@Store[]": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvY29tcG9uZW50cy9pbnN0aXR1dGlvbmFsL0luc3RpdHV0aW9uYWxQYWdlLnRzeA==@Store"
+          },
+          "title": "deco-sites/euro-site/components/institutional/InstitutionalPage.tsx@Store[]"
+        },
+        {
+          "title": "deco-sites/euro-site/loaders/NossasLojas.tsx",
+          "type": "object",
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/euro-site/loaders/NossasLojas.tsx"
+              ],
+              "default": "deco-sites/euro-site/loaders/NossasLojas.tsx"
+            }
+          }
+        }
+      ]
+    },
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9udXZlbVNob3AvbnV2ZW1TaG9wUHJvZHVjdERldGFpbHNQYWdlLnRz@Props": {
       "type": "object",
       "properties": {
@@ -7364,6 +7436,51 @@
       ],
       "title": "deco-sites/std/packs/vtex/loaders/wishlist.ts@Props"
     },
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
+      "type": "string",
+      "format": "image-uri",
+      "title": "Image"
+    },
+    "ZGVjby1zaXRlcy9ldXJvLXNpdGUvY29tcG9uZW50cy9pbnN0aXR1dGlvbmFsL0luc3RpdHV0aW9uYWxQYWdlLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "Banner": {
+          "type": "object",
+          "properties": {
+            "bannerHero": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Banner Hero"
+            },
+            "bannerHeroMobile": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Banner Hero Mobile"
+            },
+            "titleImg": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Title Img"
+            }
+          },
+          "required": [],
+          "title": " Banner"
+        },
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "storesFromMasterData": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvY29tcG9uZW50cy9pbnN0aXR1dGlvbmFsL0luc3RpdHV0aW9uYWxQYWdlLnRzeA==@Store[]",
+          "title": "Stores From Master Data"
+        }
+      },
+      "required": [
+        "title",
+        "storesFromMasterData"
+      ],
+      "title": "deco-sites/euro-site/components/institutional/InstitutionalPage.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9ldXJvLXNpdGUvY29tcG9uZW50cy9uZXdzbGV0dGVyL05ld3NsZXR0ZXIudHN4@INewsletterInputProps": {
       "type": "object",
       "properties": {
@@ -8024,11 +8141,6 @@
         "sections"
       ],
       "title": "deco-cx/live/sections/UseSlot.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
-      "type": "string",
-      "format": "image-uri",
-      "title": "Image"
     },
     "ZGVjby1zaXRlcy9ldXJvLXNpdGUvY29tcG9uZW50cy91aS9CYW5uZXJQTFAudHN4@Banner": {
       "type": "object",
@@ -8762,7 +8874,7 @@
             "null"
           ],
           "title": "Copy Right",
-          "default": "AgÃªncia N1 - Todos os Direitos Reservados"
+          "default": "Agência N1 - Todos os Direitos Reservados"
         }
       },
       "required": [],
@@ -9478,7 +9590,7 @@
       "required": [],
       "title": "OptionalColors"
     },
-    "ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvRGVzaWduU3lzdGVtL0Rlc2lnblN5c3RlbS50c3g=@7ce107c88554f1ca364eabc6a824a42e&Colors": {
+    "ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvRGVzaWduU3lzdGVtL0Rlc2lnblN5c3RlbS50c3g=@0029682a1454d69413d8d53f742ff8ef&Colors": {
       "allOf": [
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvRGVzaWduU3lzdGVtL0Rlc2lnblN5c3RlbS50c3g=@Colors"
@@ -9494,7 +9606,7 @@
           "required": []
         }
       ],
-      "title": "7ce107c88554f1ca364eabc6a824a42e&Colors"
+      "title": "0029682a1454d69413d8d53f742ff8ef&Colors"
     },
     "ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvRGVzaWduU3lzdGVtL0Rlc2lnblN5c3RlbS50c3g=@Miscellaneous": {
       "type": "object",
@@ -9597,7 +9709,7 @@
       "type": "object",
       "properties": {
         "colors": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvRGVzaWduU3lzdGVtL0Rlc2lnblN5c3RlbS50c3g=@7ce107c88554f1ca364eabc6a824a42e&Colors",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvRGVzaWduU3lzdGVtL0Rlc2lnblN5c3RlbS50c3g=@0029682a1454d69413d8d53f742ff8ef&Colors",
           "title": "Colors"
         },
         "miscellaneous": {
@@ -10017,7 +10129,7 @@
           "type": "string",
           "title": "Opening hours",
           "format": "html",
-          "default": "Seg. Ã  Sex. das 09:00h Ã s 18:00h <br /> SÃ¡bado das 10:00h Ã s 14:00h"
+          "default": "Seg. à Sex. das 09:00h às 18:00h <br /> Sábado das 10:00h às 14:00h"
         },
         "payments": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvY29tcG9uZW50cy9mb290ZXIvUGF5bWVudHMudHN4@FooterSectionItem[]",
@@ -11632,6 +11744,136 @@
       ],
       "title": "deco-sites/euro-site/sections/Images/ImageGallery.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9ldXJvLXNpdGUvY29tcG9uZW50cy91aS9TaG9wcGFibGVCYW5uZXJMaW5oYXNMZWZ0LnRzeA==@Pin": {
+      "type": "object",
+      "properties": {
+        "mobile": {
+          "type": "object",
+          "properties": {
+            "x": {
+              "type": "number",
+              "title": "X"
+            },
+            "y": {
+              "type": "number",
+              "title": "Y"
+            }
+          },
+          "required": [
+            "x",
+            "y"
+          ],
+          "title": "Mobile"
+        },
+        "desktop": {
+          "type": "object",
+          "properties": {
+            "x": {
+              "type": "number",
+              "title": "X"
+            },
+            "y": {
+              "type": "number",
+              "title": "Y"
+            }
+          },
+          "required": [
+            "x",
+            "y"
+          ],
+          "title": "Desktop"
+        },
+        "link": {
+          "type": "string",
+          "title": "Link"
+        },
+        "label": {
+          "type": "string",
+          "title": "Label"
+        }
+      },
+      "required": [
+        "mobile",
+        "link",
+        "label"
+      ],
+      "title": "Pin"
+    },
+    "ZGVjby1zaXRlcy9ldXJvLXNpdGUvY29tcG9uZW50cy91aS9TaG9wcGFibGVCYW5uZXJMaW5oYXNMZWZ0LnRzeA==@Pin[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvY29tcG9uZW50cy91aS9TaG9wcGFibGVCYW5uZXJMaW5oYXNMZWZ0LnRzeA==@Pin"
+      },
+      "title": "Pin[]"
+    },
+    "ZGVjby1zaXRlcy9ldXJvLXNpdGUvY29tcG9uZW50cy91aS9TaG9wcGFibGVCYW5uZXJMaW5oYXNMZWZ0LnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "type": "object",
+          "properties": {
+            "mobile": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Mobile"
+            },
+            "desktop": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Desktop"
+            },
+            "altText": {
+              "type": "string",
+              "title": "Alt Text"
+            }
+          },
+          "required": [
+            "mobile",
+            "altText"
+          ],
+          "title": "Image"
+        },
+        "pins": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvY29tcG9uZW50cy91aS9TaG9wcGFibGVCYW5uZXJMaW5oYXNMZWZ0LnRzeA==@Pin[]",
+          "title": "Pins"
+        },
+        "text": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Text"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "link": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "title": "Text"
+            },
+            "href": {
+              "type": "string",
+              "title": "Href"
+            }
+          },
+          "required": [
+            "text",
+            "href"
+          ],
+          "title": "Link"
+        }
+      },
+      "required": [
+        "image",
+        "pins"
+      ],
+      "title": "deco-sites/euro-site/components/ui/ShoppableBannerLinhasLeft.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvSW1hZ2VzL1Nob3BwYWJsZUJhbm5lci50c3g=@Pin": {
       "type": "object",
       "properties": {
@@ -11762,6 +12004,266 @@
       ],
       "title": "deco-sites/euro-site/sections/Images/ShoppableBanner.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvSW1hZ2VzL1Nob3BwYWJsZUJhbm5lck5vdm8udHN4@Pin": {
+      "type": "object",
+      "properties": {
+        "mobile": {
+          "type": "object",
+          "properties": {
+            "x": {
+              "type": "number",
+              "title": "X"
+            },
+            "y": {
+              "type": "number",
+              "title": "Y"
+            }
+          },
+          "required": [
+            "x",
+            "y"
+          ],
+          "title": "Mobile"
+        },
+        "desktop": {
+          "type": "object",
+          "properties": {
+            "x": {
+              "type": "number",
+              "title": "X"
+            },
+            "y": {
+              "type": "number",
+              "title": "Y"
+            }
+          },
+          "required": [
+            "x",
+            "y"
+          ],
+          "title": "Desktop"
+        },
+        "link": {
+          "type": "string",
+          "title": "Link"
+        },
+        "label": {
+          "type": "string",
+          "title": "Label"
+        }
+      },
+      "required": [
+        "mobile",
+        "link",
+        "label"
+      ],
+      "title": "Pin"
+    },
+    "ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvSW1hZ2VzL1Nob3BwYWJsZUJhbm5lck5vdm8udHN4@Pin[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvSW1hZ2VzL1Nob3BwYWJsZUJhbm5lck5vdm8udHN4@Pin"
+      },
+      "title": "Pin[]"
+    },
+    "ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvSW1hZ2VzL1Nob3BwYWJsZUJhbm5lck5vdm8udHN4@Props": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "type": "object",
+          "properties": {
+            "mobile": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Mobile"
+            },
+            "desktop": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Desktop"
+            },
+            "altText": {
+              "type": "string",
+              "title": "Alt Text"
+            }
+          },
+          "required": [
+            "mobile",
+            "altText"
+          ],
+          "title": "Image"
+        },
+        "pins": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvSW1hZ2VzL1Nob3BwYWJsZUJhbm5lck5vdm8udHN4@Pin[]",
+          "title": "Pins"
+        },
+        "text": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Text"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "link": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "title": "Text"
+            },
+            "href": {
+              "type": "string",
+              "title": "Href"
+            }
+          },
+          "required": [
+            "text",
+            "href"
+          ],
+          "title": "Link"
+        }
+      },
+      "required": [
+        "image",
+        "pins"
+      ],
+      "title": "deco-sites/euro-site/sections/Images/ShoppableBannerNovo.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9ldXJvLXNpdGUvY29tcG9uZW50cy91aS9TaG9wcGFibGVCYW5uZXJMaW5oYXNSaWdodC50c3g=@Pin": {
+      "type": "object",
+      "properties": {
+        "mobile": {
+          "type": "object",
+          "properties": {
+            "x": {
+              "type": "number",
+              "title": "X"
+            },
+            "y": {
+              "type": "number",
+              "title": "Y"
+            }
+          },
+          "required": [
+            "x",
+            "y"
+          ],
+          "title": "Mobile"
+        },
+        "desktop": {
+          "type": "object",
+          "properties": {
+            "x": {
+              "type": "number",
+              "title": "X"
+            },
+            "y": {
+              "type": "number",
+              "title": "Y"
+            }
+          },
+          "required": [
+            "x",
+            "y"
+          ],
+          "title": "Desktop"
+        },
+        "link": {
+          "type": "string",
+          "title": "Link"
+        },
+        "label": {
+          "type": "string",
+          "title": "Label"
+        }
+      },
+      "required": [
+        "mobile",
+        "link",
+        "label"
+      ],
+      "title": "Pin"
+    },
+    "ZGVjby1zaXRlcy9ldXJvLXNpdGUvY29tcG9uZW50cy91aS9TaG9wcGFibGVCYW5uZXJMaW5oYXNSaWdodC50c3g=@Pin[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvY29tcG9uZW50cy91aS9TaG9wcGFibGVCYW5uZXJMaW5oYXNSaWdodC50c3g=@Pin"
+      },
+      "title": "Pin[]"
+    },
+    "ZGVjby1zaXRlcy9ldXJvLXNpdGUvY29tcG9uZW50cy91aS9TaG9wcGFibGVCYW5uZXJMaW5oYXNSaWdodC50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "type": "object",
+          "properties": {
+            "mobile": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Mobile"
+            },
+            "desktop": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Desktop"
+            },
+            "altText": {
+              "type": "string",
+              "title": "Alt Text"
+            }
+          },
+          "required": [
+            "mobile",
+            "altText"
+          ],
+          "title": "Image"
+        },
+        "pins": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvY29tcG9uZW50cy91aS9TaG9wcGFibGVCYW5uZXJMaW5oYXNSaWdodC50c3g=@Pin[]",
+          "title": "Pins"
+        },
+        "text": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Text"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "link": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "title": "Text"
+            },
+            "href": {
+              "type": "string",
+              "title": "Href"
+            }
+          },
+          "required": [
+            "text",
+            "href"
+          ],
+          "title": "Link"
+        }
+      },
+      "required": [
+        "image",
+        "pins"
+      ],
+      "title": "deco-sites/euro-site/components/ui/ShoppableBannerLinhasRight.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML": {
       "type": "string",
       "format": "html",
@@ -11841,282 +12343,6 @@
                   "title": {
                     "type": "string",
                     "title": "Title"
-                  },
-                  "icon": {
-                    "anyOf": [
-                      {
-                        "anyOf": [
-                          {
-                            "type": "string",
-                            "const": "Refresh",
-                            "default": "Refresh"
-                          },
-                          {
-                            "type": "string",
-                            "const": "Menu",
-                            "default": "Menu"
-                          },
-                          {
-                            "type": "string",
-                            "const": "ChevronLeft",
-                            "default": "ChevronLeft"
-                          },
-                          {
-                            "type": "string",
-                            "const": "ChevronRight",
-                            "default": "ChevronRight"
-                          },
-                          {
-                            "type": "string",
-                            "const": "ChevronUp",
-                            "default": "ChevronUp"
-                          },
-                          {
-                            "type": "string",
-                            "const": "ChevronDown",
-                            "default": "ChevronDown"
-                          },
-                          {
-                            "type": "string",
-                            "const": "QuestionMarkCircle",
-                            "default": "QuestionMarkCircle"
-                          },
-                          {
-                            "type": "string",
-                            "const": "User",
-                            "default": "User"
-                          },
-                          {
-                            "type": "string",
-                            "const": "ShoppingCart",
-                            "default": "ShoppingCart"
-                          },
-                          {
-                            "type": "string",
-                            "const": "Bars3",
-                            "default": "Bars3"
-                          },
-                          {
-                            "type": "string",
-                            "const": "Heart",
-                            "default": "Heart"
-                          },
-                          {
-                            "type": "string",
-                            "const": "MagnifyingGlass",
-                            "default": "MagnifyingGlass"
-                          },
-                          {
-                            "type": "string",
-                            "const": "XMark",
-                            "default": "XMark"
-                          },
-                          {
-                            "type": "string",
-                            "const": "Plus",
-                            "default": "Plus"
-                          },
-                          {
-                            "type": "string",
-                            "const": "Minus",
-                            "default": "Minus"
-                          },
-                          {
-                            "type": "string",
-                            "const": "MapPin",
-                            "default": "MapPin"
-                          },
-                          {
-                            "type": "string",
-                            "const": "Phone",
-                            "default": "Phone"
-                          },
-                          {
-                            "type": "string",
-                            "const": "Logo",
-                            "default": "Logo"
-                          },
-                          {
-                            "type": "string",
-                            "const": "Truck",
-                            "default": "Truck"
-                          },
-                          {
-                            "type": "string",
-                            "const": "Discount",
-                            "default": "Discount"
-                          },
-                          {
-                            "type": "string",
-                            "const": "Return",
-                            "default": "Return"
-                          },
-                          {
-                            "type": "string",
-                            "const": "Deco",
-                            "default": "Deco"
-                          },
-                          {
-                            "type": "string",
-                            "const": "Discord",
-                            "default": "Discord"
-                          },
-                          {
-                            "type": "string",
-                            "const": "Email",
-                            "default": "Email"
-                          },
-                          {
-                            "type": "string",
-                            "const": "Trash",
-                            "default": "Trash"
-                          },
-                          {
-                            "type": "string",
-                            "const": "FilterList",
-                            "default": "FilterList"
-                          },
-                          {
-                            "type": "string",
-                            "const": "ArrowsPointingOut",
-                            "default": "ArrowsPointingOut"
-                          },
-                          {
-                            "type": "string",
-                            "const": "WhatsApp",
-                            "default": "WhatsApp"
-                          },
-                          {
-                            "type": "string",
-                            "const": "ArrowsPointingOut",
-                            "default": "ArrowsPointingOut"
-                          },
-                          {
-                            "type": "string",
-                            "const": "checkIcon",
-                            "default": "checkIcon"
-                          },
-                          {
-                            "type": "string",
-                            "const": "SearchBar",
-                            "default": "SearchBar"
-                          },
-                          {
-                            "type": "string",
-                            "const": "ArrowRight",
-                            "default": "ArrowRight"
-                          }
-                        ],
-                        "type": "string"
-                      },
-                      {
-                        "anyOf": [
-                          {
-                            "type": "string",
-                            "const": "Twitter",
-                            "default": "Twitter"
-                          },
-                          {
-                            "type": "string",
-                            "const": "Linkedin",
-                            "default": "Linkedin"
-                          },
-                          {
-                            "type": "string",
-                            "const": "Pinterest",
-                            "default": "Pinterest"
-                          },
-                          {
-                            "type": "string",
-                            "const": "YouTube",
-                            "default": "YouTube"
-                          },
-                          {
-                            "type": "string",
-                            "const": "Tiktok",
-                            "default": "Tiktok"
-                          },
-                          {
-                            "type": "string",
-                            "const": "WhatsApp",
-                            "default": "WhatsApp"
-                          },
-                          {
-                            "type": "string",
-                            "const": "Instagram",
-                            "default": "Instagram"
-                          },
-                          {
-                            "type": "string",
-                            "const": "Facebook",
-                            "default": "Facebook"
-                          },
-                          {
-                            "type": "string",
-                            "const": "YouTubeOutline",
-                            "default": "YouTubeOutline"
-                          },
-                          {
-                            "type": "string",
-                            "const": "WhatsAppOutline",
-                            "default": "WhatsAppOutline"
-                          },
-                          {
-                            "type": "string",
-                            "const": "InstagramOutline",
-                            "default": "InstagramOutline"
-                          },
-                          {
-                            "type": "string",
-                            "const": "FacebookOutline",
-                            "default": "FacebookOutline"
-                          }
-                        ],
-                        "type": "string"
-                      },
-                      {
-                        "anyOf": [
-                          {
-                            "type": "string",
-                            "const": "Visa",
-                            "default": "Visa"
-                          },
-                          {
-                            "type": "string",
-                            "const": "Elo",
-                            "default": "Elo"
-                          },
-                          {
-                            "type": "string",
-                            "const": "Mastercard",
-                            "default": "Mastercard"
-                          },
-                          {
-                            "type": "string",
-                            "const": "Visa",
-                            "default": "Visa"
-                          },
-                          {
-                            "type": "string",
-                            "const": "Pix",
-                            "default": "Pix"
-                          },
-                          {
-                            "type": "string",
-                            "const": "AmericanExpress",
-                            "default": "AmericanExpress"
-                          },
-                          {
-                            "type": "string",
-                            "const": "Boleto",
-                            "default": "Boleto"
-                          }
-                        ],
-                        "type": "string"
-                      }
-                    ],
-                    "type": "string",
-                    "title": "Icon"
                   }
                 },
                 "required": [
@@ -12135,13 +12361,10 @@
                     "title": "Subtitle"
                   },
                   "paragraphs": {
-                    "type": "array",
-                    "items": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
-                    },
+                    "type": [
+                      "string",
+                      "null"
+                    ],
                     "title": "Paragraphs"
                   }
                 },
@@ -12160,282 +12383,6 @@
                     "url": {
                       "type": "string",
                       "title": "Url"
-                    },
-                    "icon": {
-                      "anyOf": [
-                        {
-                          "anyOf": [
-                            {
-                              "type": "string",
-                              "const": "Refresh",
-                              "default": "Refresh"
-                            },
-                            {
-                              "type": "string",
-                              "const": "Menu",
-                              "default": "Menu"
-                            },
-                            {
-                              "type": "string",
-                              "const": "ChevronLeft",
-                              "default": "ChevronLeft"
-                            },
-                            {
-                              "type": "string",
-                              "const": "ChevronRight",
-                              "default": "ChevronRight"
-                            },
-                            {
-                              "type": "string",
-                              "const": "ChevronUp",
-                              "default": "ChevronUp"
-                            },
-                            {
-                              "type": "string",
-                              "const": "ChevronDown",
-                              "default": "ChevronDown"
-                            },
-                            {
-                              "type": "string",
-                              "const": "QuestionMarkCircle",
-                              "default": "QuestionMarkCircle"
-                            },
-                            {
-                              "type": "string",
-                              "const": "User",
-                              "default": "User"
-                            },
-                            {
-                              "type": "string",
-                              "const": "ShoppingCart",
-                              "default": "ShoppingCart"
-                            },
-                            {
-                              "type": "string",
-                              "const": "Bars3",
-                              "default": "Bars3"
-                            },
-                            {
-                              "type": "string",
-                              "const": "Heart",
-                              "default": "Heart"
-                            },
-                            {
-                              "type": "string",
-                              "const": "MagnifyingGlass",
-                              "default": "MagnifyingGlass"
-                            },
-                            {
-                              "type": "string",
-                              "const": "XMark",
-                              "default": "XMark"
-                            },
-                            {
-                              "type": "string",
-                              "const": "Plus",
-                              "default": "Plus"
-                            },
-                            {
-                              "type": "string",
-                              "const": "Minus",
-                              "default": "Minus"
-                            },
-                            {
-                              "type": "string",
-                              "const": "MapPin",
-                              "default": "MapPin"
-                            },
-                            {
-                              "type": "string",
-                              "const": "Phone",
-                              "default": "Phone"
-                            },
-                            {
-                              "type": "string",
-                              "const": "Logo",
-                              "default": "Logo"
-                            },
-                            {
-                              "type": "string",
-                              "const": "Truck",
-                              "default": "Truck"
-                            },
-                            {
-                              "type": "string",
-                              "const": "Discount",
-                              "default": "Discount"
-                            },
-                            {
-                              "type": "string",
-                              "const": "Return",
-                              "default": "Return"
-                            },
-                            {
-                              "type": "string",
-                              "const": "Deco",
-                              "default": "Deco"
-                            },
-                            {
-                              "type": "string",
-                              "const": "Discord",
-                              "default": "Discord"
-                            },
-                            {
-                              "type": "string",
-                              "const": "Email",
-                              "default": "Email"
-                            },
-                            {
-                              "type": "string",
-                              "const": "Trash",
-                              "default": "Trash"
-                            },
-                            {
-                              "type": "string",
-                              "const": "FilterList",
-                              "default": "FilterList"
-                            },
-                            {
-                              "type": "string",
-                              "const": "ArrowsPointingOut",
-                              "default": "ArrowsPointingOut"
-                            },
-                            {
-                              "type": "string",
-                              "const": "WhatsApp",
-                              "default": "WhatsApp"
-                            },
-                            {
-                              "type": "string",
-                              "const": "ArrowsPointingOut",
-                              "default": "ArrowsPointingOut"
-                            },
-                            {
-                              "type": "string",
-                              "const": "checkIcon",
-                              "default": "checkIcon"
-                            },
-                            {
-                              "type": "string",
-                              "const": "SearchBar",
-                              "default": "SearchBar"
-                            },
-                            {
-                              "type": "string",
-                              "const": "ArrowRight",
-                              "default": "ArrowRight"
-                            }
-                          ],
-                          "type": "string"
-                        },
-                        {
-                          "anyOf": [
-                            {
-                              "type": "string",
-                              "const": "Twitter",
-                              "default": "Twitter"
-                            },
-                            {
-                              "type": "string",
-                              "const": "Linkedin",
-                              "default": "Linkedin"
-                            },
-                            {
-                              "type": "string",
-                              "const": "Pinterest",
-                              "default": "Pinterest"
-                            },
-                            {
-                              "type": "string",
-                              "const": "YouTube",
-                              "default": "YouTube"
-                            },
-                            {
-                              "type": "string",
-                              "const": "Tiktok",
-                              "default": "Tiktok"
-                            },
-                            {
-                              "type": "string",
-                              "const": "WhatsApp",
-                              "default": "WhatsApp"
-                            },
-                            {
-                              "type": "string",
-                              "const": "Instagram",
-                              "default": "Instagram"
-                            },
-                            {
-                              "type": "string",
-                              "const": "Facebook",
-                              "default": "Facebook"
-                            },
-                            {
-                              "type": "string",
-                              "const": "YouTubeOutline",
-                              "default": "YouTubeOutline"
-                            },
-                            {
-                              "type": "string",
-                              "const": "WhatsAppOutline",
-                              "default": "WhatsAppOutline"
-                            },
-                            {
-                              "type": "string",
-                              "const": "InstagramOutline",
-                              "default": "InstagramOutline"
-                            },
-                            {
-                              "type": "string",
-                              "const": "FacebookOutline",
-                              "default": "FacebookOutline"
-                            }
-                          ],
-                          "type": "string"
-                        },
-                        {
-                          "anyOf": [
-                            {
-                              "type": "string",
-                              "const": "Visa",
-                              "default": "Visa"
-                            },
-                            {
-                              "type": "string",
-                              "const": "Elo",
-                              "default": "Elo"
-                            },
-                            {
-                              "type": "string",
-                              "const": "Mastercard",
-                              "default": "Mastercard"
-                            },
-                            {
-                              "type": "string",
-                              "const": "Visa",
-                              "default": "Visa"
-                            },
-                            {
-                              "type": "string",
-                              "const": "Pix",
-                              "default": "Pix"
-                            },
-                            {
-                              "type": "string",
-                              "const": "AmericanExpress",
-                              "default": "AmericanExpress"
-                            },
-                            {
-                              "type": "string",
-                              "const": "Boleto",
-                              "default": "Boleto"
-                            }
-                          ],
-                          "type": "string"
-                        }
-                      ],
-                      "type": "string",
-                      "title": "Icon"
                     }
                   },
                   "required": [
@@ -12444,12 +12391,68 @@
                   ]
                 },
                 "title": "Links"
+              },
+              "cidades": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "nome": {
+                      "type": "string",
+                      "title": "Nome"
+                    },
+                    "endereco": {
+                      "type": "string",
+                      "title": "Endereco"
+                    },
+                    "cidade": {
+                      "type": "string",
+                      "title": "Cidade"
+                    },
+                    "estado": {
+                      "type": "string",
+                      "title": "Estado"
+                    },
+                    "telefone": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "type": "string",
+                          "title": "Label"
+                        },
+                        "url": {
+                          "type": "string",
+                          "title": "Url"
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "url"
+                      ],
+                      "title": "Telefone"
+                    },
+                    "mapa": {
+                      "type": "string",
+                      "title": "Mapa"
+                    }
+                  },
+                  "required": [
+                    "nome",
+                    "endereco",
+                    "cidade",
+                    "estado",
+                    "telefone",
+                    "mapa"
+                  ]
+                },
+                "title": "Cidades"
               }
             },
             "required": [
               "heading",
               "content",
-              "links"
+              "links",
+              "cidades"
             ]
           },
           "title": "Cards"
@@ -12514,42 +12517,6 @@
         "alt"
       ],
       "title": "deco-sites/euro-site/components/institutional/ContactForm.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9ldXJvLXNpdGUvY29tcG9uZW50cy9pbnN0aXR1dGlvbmFsL0luc3RpdHV0aW9uYWxQYWdlLnRzeA==@Props": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": "string",
-          "title": "Title"
-        },
-        "asideMenu": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section",
-          "title": "Aside Menu"
-        },
-        "content": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvSW5zdGl0dXRpb25hbC9UZXh0Q29udGVudC50c3g="
-            },
-            {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvSW5zdGl0dXRpb25hbC9BY2NvcmRpb25zQ29udGVudC50c3g="
-            },
-            {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvSW5zdGl0dXRpb25hbC9DYXJkc0NvbnRlbnQudHN4"
-            },
-            {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvSW5zdGl0dXRpb25hbC9Db250YWN0Rm9ybS50c3g="
-            }
-          ],
-          "title": "Content"
-        }
-      },
-      "required": [
-        "title",
-        "asideMenu",
-        "content"
-      ],
-      "title": "deco-sites/euro-site/components/institutional/InstitutionalPage.tsx@Props"
     },
     "ZGVjby1zaXRlcy9ldXJvLXNpdGUvY29tcG9uZW50cy9pbnN0aXR1dGlvbmFsL1RleHRDb250ZW50LnRzeA==@Props": {
       "type": "object",
@@ -15412,6 +15379,22 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9ldXJvLXNpdGUvbG9hZGVycy9Ob3NzYXNMb2phcy50c3g=": {
+      "title": "deco-sites/euro-site/loaders/NossasLojas.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/euro-site/loaders/NossasLojas.tsx"
+          ],
+          "default": "deco-sites/euro-site/loaders/NossasLojas.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9udXZlbVNob3AvbnV2ZW1TaG9wUHJvZHVjdERldGFpbHNQYWdlLnRz": {
       "title": "NuvemShop - PDP",
       "type": "object",
@@ -15861,6 +15844,27 @@
             "./islands/HeaderSearchbar.tsx"
           ],
           "default": "./islands/HeaderSearchbar.tsx"
+        }
+      }
+    },
+    "Li9pc2xhbmRzL0luc3RpdHV0aW9uYWxQYWdlLnRzeA==": {
+      "title": "./islands/InstitutionalPage.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvY29tcG9uZW50cy9pbnN0aXR1dGlvbmFsL0luc3RpdHV0aW9uYWxQYWdlLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/InstitutionalPage.tsx"
+          ],
+          "default": "./islands/InstitutionalPage.tsx"
         }
       }
     },
@@ -16694,6 +16698,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvSW1hZ2VzL1Nob3BhYmJsZUJhbm5lckxlZnQudHN4": {
+      "title": "deco-sites/euro-site/sections/Images/ShopabbleBannerLeft.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvY29tcG9uZW50cy91aS9TaG9wcGFibGVCYW5uZXJMaW5oYXNMZWZ0LnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/euro-site/sections/Images/ShopabbleBannerLeft.tsx"
+          ],
+          "default": "deco-sites/euro-site/sections/Images/ShopabbleBannerLeft.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvSW1hZ2VzL1Nob3BwYWJsZUJhbm5lci50c3g=": {
       "title": "deco-sites/euro-site/sections/Images/ShoppableBanner.tsx",
       "type": "object",
@@ -16712,6 +16737,48 @@
             "deco-sites/euro-site/sections/Images/ShoppableBanner.tsx"
           ],
           "default": "deco-sites/euro-site/sections/Images/ShoppableBanner.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvSW1hZ2VzL1Nob3BwYWJsZUJhbm5lck5vdm8udHN4": {
+      "title": "deco-sites/euro-site/sections/Images/ShoppableBannerNovo.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvSW1hZ2VzL1Nob3BwYWJsZUJhbm5lck5vdm8udHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/euro-site/sections/Images/ShoppableBannerNovo.tsx"
+          ],
+          "default": "deco-sites/euro-site/sections/Images/ShoppableBannerNovo.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvSW1hZ2VzL1Nob3BwYWJsZUJhbm5lclJpZ2h0LnRzeA==": {
+      "title": "deco-sites/euro-site/sections/Images/ShoppableBannerRight.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvY29tcG9uZW50cy91aS9TaG9wcGFibGVCYW5uZXJMaW5oYXNSaWdodC50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/euro-site/sections/Images/ShoppableBannerRight.tsx"
+          ],
+          "default": "deco-sites/euro-site/sections/Images/ShoppableBannerRight.tsx"
         }
       }
     },
@@ -18174,6 +18241,9 @@
           "$ref": "#/definitions/JGxpdmUvbG9hZGVycy93b3JrZmxvd3MvZ2V0LnRz"
         },
         {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvbG9hZGVycy9Ob3NzYXNMb2phcy50c3g="
+        },
+        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9udXZlbVNob3AvbnV2ZW1TaG9wUHJvZHVjdERldGFpbHNQYWdlLnRz"
         },
         {
@@ -18253,6 +18323,9 @@
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlclNlYXJjaGJhci50c3g="
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL0luc3RpdHV0aW9uYWxQYWdlLnRzeA=="
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL05ld3NsZXR0ZXIudHN4"
@@ -18402,7 +18475,16 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvSW1hZ2VzL0ltYWdlR2FsbGVyeS50c3g="
         },
         {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvSW1hZ2VzL1Nob3BhYmJsZUJhbm5lckxlZnQudHN4"
+        },
+        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvSW1hZ2VzL1Nob3BwYWJsZUJhbm5lci50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvSW1hZ2VzL1Nob3BwYWJsZUJhbm5lck5vdm8udHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvSW1hZ2VzL1Nob3BwYWJsZUJhbm5lclJpZ2h0LnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9ldXJvLXNpdGUvc2VjdGlvbnMvSW5zdGl0dXRpb25hbC9BY2NvcmRpb25zQ29udGVudC50c3g="
