@@ -151,8 +151,6 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
             color={action.color}
             title={action.title}
           />
-
-          
         </div>
       )}
     </a>

@@ -1,7 +1,7 @@
 import type { Store } from "$store/components/institutional/InstitutionalPage.tsx";
 
 export default async function searchStores(): Promise<Store[]> {
-  const URL = "https://tezm99.vtexcommercestable.com.br/"
+  const URL = "https://tezm99.vtexcommercestable.com.br/";
 
   const a = new Headers({
     Accept: "application/vnd.vtex.ds.v10+json",

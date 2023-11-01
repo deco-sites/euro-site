@@ -52,7 +52,7 @@ function Header(
     // suggestions,
   }: Props,
 ) {
-  const searchbar = { ..._searchbar};
+  const searchbar = { ..._searchbar };
   return (
     <>
       <header style={{ height: headerHeight }}>
