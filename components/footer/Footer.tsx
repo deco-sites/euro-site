@@ -66,11 +66,6 @@ export interface Props {
    * @title Phone number
    */
   phone: string;
-
-  /**
-   * @title Cel number
-   */
-  celular: string;
   /**
    * @title E-mail
    */
