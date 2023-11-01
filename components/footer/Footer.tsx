@@ -66,6 +66,11 @@ export interface Props {
    * @title Phone number
    */
   phone: string;
+
+  /**
+   * @title Cel number
+   */
+  celular: string;
   /**
    * @title E-mail
    */
@@ -97,6 +102,7 @@ function Footer(
     openingHours,
     email,
     phone,
+    celular,
     payments,
     securities,
     poweredby,
@@ -115,6 +121,7 @@ function Footer(
               <Icon id="Phone" width={20} height={20} class="text-emphasis" />
               <span class="text-emphasis text-xs font-bold text-left">
                 {phone}
+                {celular]
               </span>
             </div>
             <div class="flex items-center gap-2 mt-3">
