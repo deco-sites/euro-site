@@ -48,7 +48,7 @@ export default function ShoppableBanner(props: Props) {
   const { link, text, title, image, pins } = { ...DEFAULT_PROPS, ...props };
 
   return (
-    <div class="container">
+    <div class="container py-10">
       <div class="card pd-card lg:card-side rounded grid grid-cols-1 lg:grid-cols-[50%_50%]">
         <figure class="relative">
           <Picture>
