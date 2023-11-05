@@ -22,7 +22,7 @@ export default function SocialNetWorks(
             class="bg-base-300 w-8 h-8 rounded-full hover:bg-emphasis transition-all duration-500"
           >
             <a
-              href="#"
+              href={social.href}
               class="flex items-center justify-center w-full h-full text-white"
               target="_blank"
               aria-label={social.label}
