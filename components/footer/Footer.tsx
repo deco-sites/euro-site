@@ -116,7 +116,6 @@ function Footer(
               <Icon id="Phone" width={20} height={20} class="text-emphasis" />
               <span class="text-emphasis text-xs font-bold text-left">
                 {phone}
-                {celular]
               </span>
             </div>
             <div class="flex items-center gap-2 mt-3">
