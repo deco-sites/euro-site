@@ -303,11 +303,11 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
                 l?.basics?.oldPriceSize === "Normal" ? "lg:flex-row" : ""
               } ${align === "center" ? "justify-center" : "justify-start"}`}
             >
-              {/*  <-- <p
+              <p
                 class={`line-through text-base-300 text-xs ${
                   l?.basics?.oldPriceSize === "Normal" ? "lg:text-xl" : ""
                 }`}
-              > */}
+              >
                 {formatPrice(listPrice, offers!.priceCurrency!)}
               </p>
               <p class="text-emphasis text-sm font-bold">
