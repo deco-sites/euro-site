@@ -97,7 +97,6 @@ function Footer(
     openingHours,
     email,
     phone,
-    celular,
     payments,
     securities,
     poweredby,
