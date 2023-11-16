@@ -171,16 +171,16 @@ function Footer(
               id="accordion-container--footer"
             >
               {sections.map((section) => (
-                <div class="collapse collapse-plus w-full rounded-none">
-                  <input
+                <div class="w-full rounded-none">
+                  {/* <input
                     type="checkbox"
                     name="my-accordion-mobile--footer"
                     class="absolute left-0 w-full h-full top-0"
-                  />
-                  <div class="collapse-title border-b border-base-content py-2.5 text-base-content font-medium pl-0 flex items-center justify-between pr-0">
+                  /> */}
+                  <div class="border-b border-base-content py-2.5 text-base-content font-medium pl-0 flex items-center justify-between pr-0">
                     {section.label}
                   </div>
-                  <div class="collapse-content pl-0">
+                  {/* <div class="pl-0">
                     <ul class="pt-5 pb-2">
                       {section.children.map((item) => (
                         <li class="leading-normal py-1">
@@ -188,7 +188,18 @@ function Footer(
                         </li>
                       ))}
                     </ul>
-                  </div>
+                  </div> */}
+                  <ul
+                      class={`flex ${
+                        isIcon(section.children[0]) ? "flex-row" : "flex-col"
+                      } gap-1 pt-5 flex-wrap`}
+                    >
+                      {section.children.map((item) => (
+                        <li class="leading-normal">
+                          <SectionItem item={item} />
+                        </li>
+                      ))}
+                    </ul>
                 </div>
               ))}
             </div>
