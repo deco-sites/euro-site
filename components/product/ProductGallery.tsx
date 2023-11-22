@@ -19,7 +19,7 @@ function ProductGallery({ products }: Props) {
           product={product}
           preload={index === 0}
           layout={{
-            discount: { label: "OFF", variant: "emphasis" },
+            discount: { label: "OFF", variant: "accent" },
             hide: { skuSelector: true, productDescription: true },
             basics: { contentAlignment: "Center" },
           }}
