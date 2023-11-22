@@ -10,7 +10,7 @@ export default {
     },
     extend: {
       colors: {
-        "emphasis": "#E93A7D",
+        "emphasis": "#a20518",
         "neutral-100": "#EDEDED",
         "neutral-200": "#F7F7F7",
       },
