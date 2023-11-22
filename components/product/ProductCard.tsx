@@ -318,7 +318,7 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
               ? ""
               : (
                 <div class="text-xs font-normal text-base-content mt-[5px]">
-                  ou {installment?.billingDuration}x de ${formatPrice(
+                  ou {installment?.billingDuration}x de {formatPrice(
                     installment?.billingIncrement,
                     offers!.priceCurrency!,
                   )}
