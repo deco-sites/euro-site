@@ -272,6 +272,65 @@ const useStableImages = (product: ProductDetailsPage["product"]) => {
   });
 };
 
+function ProductDescription({ description }: { description?: string }) {
+  return (
+    <div className="readmore px-0 text-base">
+      {description || 'Descrição não disponível.'}
+    </div>
+  );
+}
+
+function ProductDescriptionSection({ product }: { product: ProductDetailsPage['product'] }) {
+  return (
+    <div className="product-description-section py-10 px-2 text-[#66628C]">
+      <div className="collapse-title px-0">
+          Detalhes do produto
+      </div>
+      <div className="container mx-auto">
+        <ProductDescription description={product?.description} />
+      </div>
+    </div>
+  );
+}
+
+function ProductFeaturesSection({ features }: { features: Array<{ image: string; title: string; subtitle: string }> }) {
+  return (
+    <div className="product-features-section">
+      <div className="container mx-auto py-10">
+        {features.map((feature, index) => (
+          <div key={index} className="flex flex-col lg:flex-row mb-4 py-10 gap-24">
+            {/* Imagem */}
+            <div className={`lg:w-1/2 lg:order-${index % 2 === 0 ? '1' : '2'}`}>
+              <img src={feature.image} alt={`Feature ${index + 1}`} className="w-full max-h-[457px]" />
+            </div>
+
+            {/* Título e Subtítulo */}
+            <div className={`lg:w-1/2 lg:order-${index % 2 === 0 ? '2' : '1'}`}>
+              <div className="feature-text-container relative pt-2">
+                {/* Borda superior */}
+                <div className={`border-t-2 border-[#174C67] w-[43%] absolute top-0 ${
+                    index % 2 === 0 ? 'right-0' : 'left-0'
+                  }`}></div>
+
+                {/* Título e Subtítulo */}
+                <div
+                  className={`max-w-[433px] ${
+                    index % 2 === 0 ? 'lg:mr-auto' : 'lg:ml-auto'
+                  }`}
+                >
+                    <h2 className="text-5xl leading-[76px] font-medium py-4">{feature.title}</h2>
+                    <p className="text-base-300 leading-[26px]">{feature.subtitle}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+
 function Details({
   page,
   variant,
@@ -292,6 +351,24 @@ function Details({
   const id = `product-image-gallery:${useId()}`;
   const images = useStableImages(product);
 
+  const features = [
+    {
+      image: 'https://www.eurocolchoes.com/live/invoke/deco-sites/std/loaders/x/image.ts?src=https%3A%2F%2Fozksgdmyrqcxcwhnbepg.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fassets%2F2353%2F3d6c66b0-25c4-4899-94cd-6ecb9690cf29&fit=cover&width=768&height=454&__frsh_c=4881070e82058f1c1e16a40ea9109c4185f16aa5',
+      title: 'Linha Euro',
+      subtitle: 'A Linha Euro da Euro Colchões é uma coleção de produtos premium que oferece conforto e qualidade excepcionais.',
+    },
+    {
+      image: 'https://img.freepik.com/fotos-premium/mulher-atraente-e-alegre-de-pijama-usando-o-celular-e-sorrindo-enquanto-esta-deitada-na-cama-depois-de-dormir-ou-cochilar_171337-94241.jpg',
+      title: 'Conforto macio',
+      subtitle: 'Sensação de maciez para quem não abre mão do alinhamento da coluna vertebral.',
+    },
+    {
+      image: 'https://static3.tcdn.com.br/img/img_prod/1083165/colchao_solteiro_molas_ensacadas_new_connect_firme_fortezza_88x188_6821_3_b055924db2d080b51fc311da236f3bb9.jpg',
+      title: 'Euro Probiotic',
+      subtitle: 'O mais avançado neutralizador de ácaros do mundo, que usa probióticos naturais diretamente na malha para higienizar o colchão e evitar alergias.',
+    },
+  ];
+
   /**
    * Product slider variant
    */
@@ -304,7 +381,7 @@ function Details({
         />
         <div
           id={id}
-          class="flex flex-col lg:flex-row gap-4 lg:justify-center"
+          class="flex flex-col lg:flex-row gap-4 lg:justify-center pb-10"
         >
           {/* Product Images */}
           <div class="flex flex-col xl:flex-row-reverse relative lg:items-start gap-4">
@@ -377,6 +454,29 @@ function Details({
           </div>
         </div>
         <SliderJS rootId={id}></SliderJS>
+        <ProductDescriptionSection product={product} />
+        <div class="bg-[#69808B] text-white p-10">
+        <div class="flex flex-row gap-3 items-center pb-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38">
+          <defs>
+            <clipPath id="clip-path">
+              <rect id="Retângulo_510" data-name="Retângulo 510" width="16.969" height="21.432" fill="#69808b"/>
+            </clipPath>
+          </defs>
+          <g id="icon-super-garantia-desktop" transform="translate(-895 -268)">
+            <rect id="Stroke" width="38" height="38" rx="19" transform="translate(895 268)" fill="#f7f8fa"/>
+            <g id="Grupo_1576" data-name="Grupo 1576" transform="translate(905.581 276.597)">
+              <g id="Grupo_1576-2" data-name="Grupo 1576" clip-path="url(#clip-path)">
+                <path id="Caminho_2090" data-name="Caminho 2090" d="M238.223,277.333a3.561,3.561,0,0,0-1.786,6.648v2.53a.644.644,0,0,0,1.1.455l.687-.686.687.686a.644.644,0,0,0,1.1-.455v-2.53a3.561,3.561,0,0,0-1.786-6.648Z" transform="translate(-224.828 -265.723)" fill="#69808b"/>
+                <path id="Caminho_2091" data-name="Caminho 2091" d="M8.037,15.182a5.352,5.352,0,0,1,8.037-4.636V4.465A4.471,4.471,0,0,0,11.61,0H4.465A4.471,4.471,0,0,0,0,4.465V15.182a4.471,4.471,0,0,0,4.465,4.465H9.824v-.482a5.336,5.336,0,0,1-1.786-3.983M4.465,3.572H11.61a.893.893,0,0,1,0,1.786H4.465a.893.893,0,1,1,0-1.786m0,3.572H11.61a.893.893,0,0,1,0,1.786H4.465a.893.893,0,0,1,0-1.786M7.144,12.5H4.465a.893.893,0,0,1,0-1.786H7.144a.893.893,0,0,1,0,1.786" fill="#69808b"/>
+              </g>
+            </g>
+          </g>
+      </svg><p class="text-2xl">Super garantia</p></div>
+          <p>3 anos no molejo, 3 anos no estofamento e 90 dias no tecido, a melhor garantia do mercado. Faça você também o teste de qualidade.</p>
+        </div>
+        {/* Seção de Características */}
+        <ProductFeaturesSection features={features} />
       </>
     );
   }
