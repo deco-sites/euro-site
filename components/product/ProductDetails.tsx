@@ -142,7 +142,7 @@ function ProductInfo(
         </summary>
         <div className="readmore text-xs px-0 leading-tight collapse-content text-base-300">
           <input type="checkbox" id="readmore" className="readmore-toggle" />
-          <label htmlFor="readmore" className="readmore-label my-2 block">
+          <label htmlFor="readmore" className="readmore-label text-emphasis my-2 block">
             + Ler mais
           </label>
           <p className="readmore-content">{description}</p>
