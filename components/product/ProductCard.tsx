@@ -13,6 +13,7 @@ import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import Image from "deco-sites/std/components/Image.tsx";
 import DiscountBadge from "./DiscountBadge.tsx";
+import FreeShippingBadge from "./FreeShippingBadge.tsx";
 
 export interface Layout {
   basics?: {
@@ -205,6 +206,9 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
         `}
         >
           <WishlistIcon productGroupID={productGroupID} productID={productID} />
+        </div>
+        <div>
+          <FreeShippingBadge/>
         </div>
         <a
           href={url && relative(url)}
