@@ -12,6 +12,7 @@ export default {
       colors: {
         "neutral-100": "#EDEDED",
         "neutral-200": "#F7F7F7",
+        "emphasis": "#E7527C",
       },
       animation: {
         "slide-left": "slide-left-frame 0.4s ease normal",

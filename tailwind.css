@@ -106,7 +106,7 @@
 }
 
 .readmore-label {
-  @apply text-emphasis uppercase cursor-pointer;
+  @apply uppercase cursor-pointer;
 }
 
 .readmore-content {
