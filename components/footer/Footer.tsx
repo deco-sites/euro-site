@@ -37,7 +37,7 @@ function SectionItem({ item }: { item: Item }) {
         : (
           <a
             href={item.href}
-            class="max-md:text-sm text-xs font-normal text-base-300 hover:text-emphasis transition-all duration-500"
+            class="font-normal text-base-300 hover:text-emphasis transition-all duration-500"
           >
             {item.label}
           </a>
@@ -118,24 +118,24 @@ function Footer(
             )}
             <div class="flex items-center gap-2 mt-5">
               <Icon id="Phone" width={20} height={20} class="text-emphasis" />
-              <span class="text-emphasis text-xs font-bold text-left">
+              <span class="text-emphasis font-bold text-left">
                 {phone}
               </span>
             </div>
             <div class="flex items-center gap-2 mt-5">
               <Icon id="Phone" width={20} height={20} class="text-emphasis" />
-              <span class="text-emphasis text-xs font-bold text-left">
+              <span class="text-emphasis font-bold text-left">
                 {celular}
               </span>
             </div>
             <div class="flex items-center gap-2 mt-3">
               <Icon id="Email" width={20} height={20} class="text-emphasis" />
-              <span class="text-emphasis text-xs font-bold text-left">
+              <span class="text-emphasis font-bold text-left">
                 {email}
               </span>
             </div>
             <span
-              class="text-base-300 text-left text-xs font-normal mt-3 block leading-6"
+              class="text-base-300 text-left font-normal mt-3 block leading-6"
               dangerouslySetInnerHTML={{
                 __html: openingHours,
               }}

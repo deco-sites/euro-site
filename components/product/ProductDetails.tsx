@@ -100,7 +100,7 @@ function ProductInfo(
       <div class="mt-5">
         <div class="flex flex-row gap-2 items-center">
           {listPrice !== price && (
-            <span class="line-through text-base-300 text-xs">
+            <span class="line-through text-base-300">
               {formatPrice(listPrice, offers!.priceCurrency!)}
             </span>
           )}
@@ -142,7 +142,7 @@ function ProductInfo(
         </summary>
         <div className="readmore text-xs px-0 leading-tight collapse-content text-base-300">
           <input type="checkbox" id="readmore" className="readmore-toggle" />
-          <label htmlFor="readmore" className="readmore-label my-2 block">
+          <label htmlFor="readmore" className="readmore-label text-emphasis my-2 block">
             + Ler mais
           </label>
           <p className="readmore-content">{description}</p>

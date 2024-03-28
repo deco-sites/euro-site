@@ -106,7 +106,7 @@
 }
 
 .readmore-label {
-  @apply text-emphasis uppercase cursor-pointer;
+  @apply uppercase cursor-pointer;
 }
 
 .readmore-content {
@@ -128,4 +128,29 @@
 .readmore-toggle:checked ~ .readmore-label::before {
   content: "- Ler menos";
   visibility: visible;
+}
+
+.text-linhas {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+.card-linhas {
+  padding: 75px;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: 2rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  color: white;
+  padding-bottom: 30px;
+}
+
+.text-emphasis {
+  color: #184d68;
 }

@@ -287,7 +287,7 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
               {l?.hide.productName
                 ? ""
                 : (
-                  <h2 class="truncate text-xs font-bold text-base-content">
+                  <h2 class="truncate font-bold text-base-content leading-4">
                     {isVariantOf?.name || name}
                   </h2>
                 )}
@@ -314,14 +314,14 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
               >
                 {formatPrice(listPrice, offers!.priceCurrency!)}
               </p> */}
-              <p class="text-emphasis text-sm font-bold">
+              <p class="text-emphasis font-bold leading-4">
                 {formatPrice(price, offers!.priceCurrency!)}
               </p>
             </div>
             {l?.hide.installments
               ? ""
               : (
-                <div class="text-xs font-normal text-base-content mt-[5px]">
+                <div class="font-normal text-base-content mt-[5px] leading-4">
                   ou {installment?.billingDuration}x de {formatPrice(
                     installment?.billingIncrement,
                     offers!.priceCurrency!,
