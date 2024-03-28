@@ -100,7 +100,7 @@ function ProductInfo(
       <div class="mt-5">
         <div class="flex flex-row gap-2 items-center">
           {listPrice !== price && (
-            <span class="line-through text-base-300 text-xs">
+            <span class="line-through text-base-300">
               {formatPrice(listPrice, offers!.priceCurrency!)}
             </span>
           )}
