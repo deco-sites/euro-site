@@ -13,6 +13,7 @@ import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import Image from "deco-sites/std/components/Image.tsx";
 import DiscountBadge from "./DiscountBadge.tsx";
+import useCartSimulation from "$store/islands/UseCartSimulation.tsx";
 // import FreeShippingBadge from "./FreeShippingBadge.tsx";
 
 export interface Layout {
@@ -66,6 +67,7 @@ interface Props {
   /** @description used for analytics event */
   itemListName?: string;
   layout?: Layout;
+  sellerId?: string;
 }
 
 export const relative = (url: string) => {
@@ -76,7 +78,7 @@ export const relative = (url: string) => {
 const WIDTH = 279;
 const HEIGHT = 270;
 
-function ProductCard({ product, preload, itemListName, layout }: Props) {
+function ProductCard({ product, preload, itemListName, layout, sellerId }: Props) {
   const {
     url,
     productID,
@@ -88,6 +90,16 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
   const productGroupID = isVariantOf?.productGroupID;
   const [front, back] = images ?? [];
   const { listPrice, price, installment, seller } = useOffer(offers);
+  const { cartSimulation} = useCartSimulation(product.sku);
+  if(product.sku == "728"){
+    console.log("product", product)
+    console.log(cartSimulation, "CART SIM")
+    console.log(sellerId, "seller ID")
+  }
+  let skuSimulation = cartSimulation?.items[0];
+  let sellingPrice = sellerId ? (skuSimulation?.sellingPrice??0)/100 : price;
+
+  
   const possibilities = useVariantPossibilities(product);
   const variants = Object.entries(Object.values(possibilities)[0] ?? {});
   const clickEvent = {
@@ -315,7 +327,7 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
                 {formatPrice(listPrice, offers!.priceCurrency!)}
               </p> */}
               <p class="text-emphasis font-bold leading-4">
-                {formatPrice(price, offers!.priceCurrency!)}
+                {formatPrice(sellingPrice, offers!.priceCurrency!)}
               </p>
             </div>
             {l?.hide.installments

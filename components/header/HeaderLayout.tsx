@@ -4,8 +4,11 @@ import Icon from "$store/components/ui/Icon.tsx";
 import Buttons from "$store/islands/HeaderButton.tsx";
 import Modals from "$store/islands/HeaderModals.tsx";
 import SearchBar from "$store/islands/HeaderSearchbar.tsx";
+import PopUp from "$store/islands/PopUp.tsx";
 import NavItem, { INavItem } from "./NavItem.tsx";
 import { megaMenuDefaultItems } from "./constants.ts";
+
+
 
 export interface Props {
   /**
@@ -68,7 +71,12 @@ function HeaderLayout(
         minicart={minicart}
         menu={{ items: navItems }}
       />
+
+      <div class="absolute z-20 bg-white w-2/4 h-2/4 top-1/2 left-1/2" >      
+        <PopUp />
+      </div>
     </header>
+
   );
 }
 
