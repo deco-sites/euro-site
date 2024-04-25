@@ -19,6 +19,7 @@ export type Props = JSX.IntrinsicElements["dialog"] & {
   loading?: "lazy" | "eager";
   menuIcon?: AvailableIcons;
   showHeader?: boolean;
+  headerClass?: string
 };
 
 const dialogStyles = {
@@ -48,6 +49,7 @@ const Modal = ({
   loading,
   menuIcon,
   showHeader,
+  headerClass,
   ...props
 }: Props) => {
   const lazy = useSignal(false);
@@ -71,7 +73,7 @@ const Modal = ({
     <dialog
       {...props}
       ref={ref}
-      class={`backdrop:bg-black backdrop:opacity-80 bg-transparent p-0 m-0 max-w-[87.5%] w-full max-h-full h-full backdrop-opacity-50 lg:max-w-[33%] ${
+      class={`backdrop:bg-black backdrop:opacity-80 bg-transparent p-0 m-0 max-w-[87.5%] w-full max-h-full backdrop-opacity-50 lg:max-w-[33%] ${
         dialogStyles[mode]
       } ${props.class ?? ""}`}
       onClick={(e) =>
@@ -87,7 +89,7 @@ const Modal = ({
           }`}
         >
           {showHeader && (
-            <header class="mx-5 mt-4 mb-[10.5px] flex items-center justify-between border-solid border-b-[1px] border-[#F7F7F7] lg:mx-10">
+            <header class={`flex items-center justify-between border-solid border-b-[1px] border-[#F7F7F7] ${headerClass ?? ''}`}>
               <h1 className="flex items-center justify-between gap-1">
                 <span class="font-medium text-base-content lg:text-xl text-xl">
                   {title}

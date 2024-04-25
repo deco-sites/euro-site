@@ -48,6 +48,7 @@ function HeaderLayout(
             : null}
         </div>
         <div class="flex items-center w-auto lg:justify-between xl:gap-8 lg:gap-2">
+          <Buttons variant="postalCode" />
           <div class="flex items-center xl:gap-4 lg:gap-2">
             <Buttons variant="search" />
             <SearchBar searchbar={{ ...searchbar, variant: "mobile" }} />
@@ -72,9 +73,6 @@ function HeaderLayout(
         menu={{ items: navItems }}
       />
 
-      <div class="absolute z-20 bg-white w-2/4 h-2/4 top-1/2 left-1/2" >      
-        <PopUp />
-      </div>
     </header>
 
   );

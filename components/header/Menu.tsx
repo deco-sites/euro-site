@@ -1,5 +1,7 @@
 import Icon from "$store/components/ui/Icon.tsx";
 import { useUI } from "$store/sdk/useUI.ts";
+import Buttons from "$store/islands/HeaderButton.tsx";
+
 import type { INavItem } from "./NavItem.tsx";
 export interface Props {
   items: INavItem[];

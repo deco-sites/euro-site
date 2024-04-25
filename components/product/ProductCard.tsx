@@ -79,7 +79,7 @@ export const relative = (url: string) => {
 const WIDTH = 279;
 const HEIGHT = 270;
 
-function ProductCard({ product, preload, itemListName, layout, sellerId }: Props) {
+function ProductCard({ product, preload, itemListName, layout, sellerId, regionId }: Props) {
   const {
     url,
     productID,
@@ -90,7 +90,9 @@ function ProductCard({ product, preload, itemListName, layout, sellerId }: Props
   } = product;
   const productGroupID = isVariantOf?.productGroupID;
   const [front, back] = images ?? [];
-  const { cartSimulation, isCartSimulationLoading } = useCartSimulation(product.sku, sellerId);
+  const { cartSimulation, isCartSimulationLoading } = useCartSimulation({
+    skuId: product.sku, sellerId, regionId
+  });
   let { listPrice, price, installment, seller: sellerFromOffer } = useOffer(offers, cartSimulation.paymentData.installmentOptions);
 
   let skuSimulation = cartSimulation?.items[0];

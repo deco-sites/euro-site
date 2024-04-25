@@ -301,6 +301,7 @@ function Details({
   const { sellerId } = useSellers();
 
   const { cartSimulation, isCartSimulationLoading } = useCartSimulation(product.sku, sellerId);
+
   let { price, listPrice, seller, installments, availability } = useOffer(
     offers,
     cartSimulation.paymentData.installmentOptions

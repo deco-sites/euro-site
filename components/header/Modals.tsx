@@ -4,9 +4,8 @@ import { useUI } from "$store/sdk/useUI.ts";
 import { lazy, Suspense } from "preact/compat";
 
 import type { Props as MenuProps } from "$store/components/header/Menu.tsx";
-import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
-
 import { ICartProps } from "$store/components/minicart/Cart.tsx";
+import PopUp from "$store/islands/PopUp.tsx"
 
 const Menu = lazy(() => import("$store/components/header/Menu.tsx"));
 const Cart = lazy(() => import("$store/components/minicart/Cart.tsx"));
@@ -17,7 +16,7 @@ interface Props {
 }
 
 function Modals({ menu, minicart }: Props) {
-  const { displayCart, displayMenu } = useUI();
+  const { displayCart, displayMenu, displayModalPostalCode } = useUI();
 
   const fallback = (
     <div class="flex justify-center items-center w-full h-full">
@@ -36,7 +35,8 @@ function Modals({ menu, minicart }: Props) {
         showHeader={false}
         open={displayMenu.value}
         onClose={() => {}}
-        class="backdrop:bg-base-content backdrop:opacity-70"
+        class="backdrop:bg-base-content backdrop:opacity-70 h-full"
+        headerClass="mx-5 mt-4 mb-[10.5px] lg:mx-10"
       >
         <Suspense fallback={fallback}>
           <Menu {...menu} />
@@ -44,7 +44,8 @@ function Modals({ menu, minicart }: Props) {
       </Modal>
 
       <Modal
-        class="ml-auto"
+        class="ml-auto h-full"
+        headerClass="mx-5 mt-4 mb-[10.5px] lg:mx-10"
         title="Meu carrinho"
         mode="sidebar-right"
         showHeader
@@ -55,9 +56,25 @@ function Modals({ menu, minicart }: Props) {
           displayCart.value = false;
         }}
       >
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback={<Loading className="h-full"/>}>
           <Cart {...minicart as ICartProps} />
         </Suspense>
+      </Modal>
+
+      <Modal
+        class="m-auto rounded-lg bg-white p-8"
+        headerClass="mb-2"
+        title="Escolha sua região"
+        mode="center"
+        showHeader
+        id="postal-code-modal"
+        loading="lazy"
+        open={displayModalPostalCode.value}
+        onClose={() => {
+          displayModalPostalCode.value = false;
+        }}
+        >
+        <PopUp />
       </Modal>
     </>
   );

@@ -1,5 +1,8 @@
 import { useState } from 'preact/hooks';
 import { useCart } from "deco-sites/std/packs/vtex/hooks/useCart.ts";
+import { useSignal } from "@preact/signals";
+import Loading from "$store/components/ui/Loading.tsx";
+import { formatPostalCode } from '../../utils/address.ts';
 
 async function getAddressByPostalCode(postalCode: string) {
   try {
@@ -30,17 +33,30 @@ const expectedOrderFormSections = [
 ]
 
 const Popup = () => {
-  const [cep, setCep] = useState('');
+  const loading = useSignal(false);
   const cartModule = useCart();
-  const { sendAttachment } = cartModule
+  const { cart } = cartModule;
+  const { sendAttachment } = cartModule;
+  
+	const savedPostalCode = cart?.value?.shippingData?.address?.postalCode
+  const postalCode = useSignal(formatPostalCode(savedPostalCode) ?? "");
 
-  const handleCepChange = (e: Event) => {
-    setCep((e.target as HTMLInputElement).value);
+  const handlePostalCodeChange = (e: any) => {
+    let { value } = e.currentTarget;
+    value = formatPostalCode(value);
+    loading.value = false;
+    postalCode.value = value;
   };
 
   const handleSubmit = (e: Event) => {
     e.preventDefault();
     e.stopPropagation();
+    loading.value = true;
+
+    if(postalCode.value.length < 9) {
+      loading.value = false;
+      return 
+    }
 
     fetch("/api/sessions/", {
       method: 'POST',
@@ -51,7 +67,7 @@ const Popup = () => {
       body: JSON.stringify({
         "public": {
           "postalCode": {
-            "value": cep
+            "value": postalCode.value
           },
           "country": {
             "value": "BRA"
@@ -59,7 +75,7 @@ const Popup = () => {
         }
       })
     }).then(res => res.json()).then(async () => {
-      const address = await getAddressByPostalCode(cep);
+      const address = await getAddressByPostalCode(postalCode.value);
 
       await sendAttachment({attachment: "shippingData", body: {
         clearAddressIfPostalCodeNotFound: false,
@@ -70,20 +86,26 @@ const Popup = () => {
       setTimeout(() => {
         window.location.reload();
       }, 1000);
-    });
+    }).finally(() => loading.value = false);
   };
 
   return (
-    <div class="cep-popup">
-      <h2>Informe o CEP</h2>
-      <div> 
+    <div className="postal-code-popup flex flex-col gap-2">
+      <label className="pl-10" htmlFor="postalCode">Informe seu CEP</label>
+      <div className="flex justify-between gap-8">
         <input
+          id="postalCode"
+          name="postalCode"
           type="text"
-          placeholder="Digite o CEP"
-          value={cep}
-          onInput={handleCepChange}
+          placeholder="00000-000"
+          maxLength={9}
+          value={postalCode.value}
+          onChange={handlePostalCodeChange}
+          className="outline-none w-full rounded-full border-2 px-2"
         />
-        <button onClick={handleSubmit}>Enviar</button> 
+        <button className="btn-primary py-2 px-4 rounded-lg h-10" onClick={handleSubmit} disabled={loading.value}>
+          {loading.value ? <Loading /> : "Enviar"}
+        </button> 
       </div>
     </div>
   );

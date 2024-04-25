@@ -3,6 +3,7 @@ import Icon from "$store/components/ui/Icon.tsx";
 import { sendEvent } from "$store/sdk/analytics.tsx";
 import { useUI } from "$store/sdk/useUI.ts";
 import { useCart } from "deco-sites/std/packs/vtex/hooks/useCart.ts";
+import { formatPostalCode } from "../../utils/address.ts";
 
 function SearchButton() {
   const { displaySearchbar } = useUI();
@@ -93,7 +94,36 @@ function CartButton() {
   );
 }
 
-function Buttons({ variant }: { variant: "cart" | "search" | "menu" }) {
+function ModalPostalCodeButton() {
+  const { displayModalPostalCode } = useUI();
+
+	const cartModule = useCart();
+  const { cart, loading } = cartModule;
+
+	const postalCode = cart?.value?.shippingData?.address?.postalCode
+
+  function handleModalPostalCode() {
+    displayModalPostalCode.value = true
+  }
+
+  const formattedPostalCode = formatPostalCode(postalCode) 
+  return !loading.value ? (
+    <button class="text-[#e7527c] flex gap-2" onClick={handleModalPostalCode}>
+      <Icon
+        class="text-base-content"
+        id="MapPin"
+        width={24}
+        height={24}
+        strokeWidth={1}
+      />
+      <p className="hidden lg:inline after:absolute after:transition-all after:duration-100 after:-bottom-1 relative after:left-0 after:w-full after:w-0 after:h-[1px] after:bg-emphasis transition-all duration-300 text-[#e7527c]">
+        {postalCode ? `Mudar CEP: ${formattedPostalCode}` : "Informe seu CEP"}
+        </p>
+      </button>
+  ) : null
+}
+
+function Buttons({ variant }: { variant: "cart" | "search" | "menu" | "postalCode" }) {
   if (variant === "cart") {
     return <CartButton />;
   }
@@ -104,6 +134,10 @@ function Buttons({ variant }: { variant: "cart" | "search" | "menu" }) {
 
   if (variant === "menu") {
     return <MenuButton />;
+  }
+
+  if (variant === "postalCode") {
+    return <ModalPostalCodeButton />;
   }
 
   return null;

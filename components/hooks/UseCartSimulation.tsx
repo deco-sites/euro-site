@@ -14,14 +14,20 @@ type PaymentData = {
   installmentOptions: InstallmentOption[];
 }
 
-export default function useCartSimulation(skuId:string, sellerId: string) {
+type UseCartSimulationProps = {
+	skuId: string;
+	sellerId: string;
+	regionId: string;
+}
+
+export default function useCartSimulation({ skuId, sellerId, regionId }: UseCartSimulationProps) {
 	const [cartSimulation, setCartSimulation] = useState<CartSimulation>(
 		{ items:[],  paymentData: { installmentOptions: [] } }
 	);
 	const [isCartSimulationLoading, setIsCartSimulationLoading] = useState(true);
 
 	const cartModule = useCart();
-  const { cart, simulate } = cartModule;
+  const { cart, simulate, loading } = cartModule;
 
 	const postalCode = cart?.value?.shippingData?.address?.postalCode
 	const handleCartSimulation = useCallback(async () => {
@@ -48,9 +54,14 @@ export default function useCartSimulation(skuId:string, sellerId: string) {
 	}, [sellerId]);
 
 	useEffect(() => {
+
+		if(!cart.value || loading.value) return 
 		if(sellerId){
 			handleCartSimulation();
-		} else if(!postalCode && !sellerId && cart.value){
+		} else if((!postalCode && !sellerId) 
+			|| sellerId === undefined 
+		|| (postalCode && !sellerId && !regionId) ){
+
 			setIsCartSimulationLoading(false)
 		}
 		return () => {

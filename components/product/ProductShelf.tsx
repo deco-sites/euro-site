@@ -45,7 +45,7 @@ function ProductShelf({
   showPaginationArrows,
 }: Props) {
   const id = useId();
-  const { sellerId } = useSellers();
+  const { sellerId, regionId } = useSellers();
 
   if (!products || products.length === 0) {
     return null;
@@ -86,6 +86,7 @@ function ProductShelf({
                 itemListName={title}
                 layout={cardLayout}
                 sellerId={sellerId}
+                regionId={regionId}
               />
             </Slider.Item>
           ))}
