@@ -6,6 +6,8 @@ import Image from "deco-sites/std/components/Image.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
 import OutOfStock from "$store/islands/OutOfStock.tsx";
+import useSellers from "$store/islands/UseSellers.tsx"
+import useCartSimulation from "$store/islands/UseCartSimulation.tsx"
 import { useOffer } from "$store/sdk/useOffer.ts";
 import { formatPrice } from "$store/sdk/format.ts";
 import { SendEventOnLoad } from "$store/sdk/analytics.tsx";
@@ -58,10 +60,23 @@ function NotFound() {
 }
 
 function ProductInfo(
-  { page, shipmentPolitics, shareableNetworks }: {
+  { page, shipmentPolitics, shareableNetworks,
+    price, 
+    listPrice, 
+    seller, 
+    installments, 
+    availability,
+    isCartSimulationLoading,
+   }: {
     page: ProductDetailsPage;
     shipmentPolitics?: Props["shipmentPolitics"];
     shareableNetworks?: Props["shareableNetworks"];
+    price: any; 
+    listPrice: any; 
+    seller: any; 
+    installments: any; 
+    availability: any;
+    isCartSimulationLoading: boolean;
   },
 ) {
   const {
@@ -77,9 +92,6 @@ function ProductInfo(
     isVariantOf,
     url,
   } = product;
-  const { price, listPrice, seller, installments, availability } = useOffer(
-    offers,
-  );
 
   return (
     <>
@@ -97,7 +109,7 @@ function ProductInfo(
         </div>
       </div>
       {/* Prices */}
-      <div class="mt-5">
+      {!isCartSimulationLoading && <div class="mt-5">
         <div class="flex flex-row gap-2 items-center">
           {listPrice !== price && (
             <span class="line-through text-base-300">
@@ -111,7 +123,7 @@ function ProductInfo(
         <span>
           {installments}
         </span>
-      </div>
+      </div>}
       {/* Sku Selector */}
       <div class="mt-4 sm:mt-5">
         <ProductSelector product={product} />
@@ -285,10 +297,19 @@ function Details({
 }) {
   const { product, breadcrumbList } = page;
   const { offers } = product;
-  const {
-    price,
-    listPrice,
-  } = useOffer(offers);
+  
+  const { sellerId } = useSellers();
+
+  const { cartSimulation, isCartSimulationLoading } = useCartSimulation(product.sku, sellerId);
+  let { price, listPrice, seller, installments, availability } = useOffer(
+    offers,
+    cartSimulation.paymentData.installmentOptions
+  );
+  let skuSimulation = cartSimulation?.items[0];
+
+  price = sellerId && skuSimulation ? skuSimulation?.sellingPrice / 100 : price;
+  listPrice = sellerId && skuSimulation ? skuSimulation.listPrice / 100 : listPrice;
+
   const id = `product-image-gallery:${useId()}`;
   const images = useStableImages(product);
 
@@ -333,7 +354,7 @@ function Details({
               </Slider>
 
               {/* Discount tag */}
-              {price && listPrice && price !== listPrice
+              {!isCartSimulationLoading && (price && listPrice && price !== listPrice)
                 ? (
                   <DiscountBadge
                     price={price}
@@ -373,7 +394,13 @@ function Details({
               page={page}
               shipmentPolitics={shipmentPolitics}
               shareableNetworks={shareableNetworks}
-            />
+              price={price} 
+              listPrice={listPrice} 
+              seller={seller} 
+              installments={installments} 
+              availability={availability}
+              isCartSimulationLoading={isCartSimulationLoading}
+              />
           </div>
         </div>
         <SliderJS rootId={id}></SliderJS>
@@ -410,7 +437,15 @@ function Details({
 
       {/* Product Info */}
       <div class="px-4 lg:pr-0 lg:pl-6">
-        <ProductInfo page={page} />
+        <ProductInfo 
+          page={page}
+          price={price} 
+          listPrice={listPrice} 
+          seller={seller} 
+          installments={installments} 
+          availability={availability}
+          isCartSimulationLoading={isCartSimulationLoading}
+        />
       </div>
     </div>
   );

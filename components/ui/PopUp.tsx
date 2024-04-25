@@ -1,7 +1,38 @@
 import { useState } from 'preact/hooks';
+import { useCart } from "deco-sites/std/packs/vtex/hooks/useCart.ts";
+
+async function getAddressByPostalCode(postalCode: string) {
+  try {
+    const res = await fetch(`/api/checkout/pub/postal-code/BRA/${postalCode}`)
+    const data = await res.json()
+    return data
+  } catch (err) {
+    console.error("Error getting address by postal code: ", { err })
+  }
+}
+
+const expectedOrderFormSections = [
+  "items",
+  "totalizers",
+  "clientProfileData",
+  "shippingData",
+  "paymentData",
+  "sellers",
+  "messages",
+  "marketingData",
+  "clientPreferencesData",
+  "storePreferencesData",
+  "giftRegistryData",
+  "ratesAndBenefitsData",
+  "openTextField",
+  "commercialConditionData",
+  "customData"
+]
 
 const Popup = () => {
   const [cep, setCep] = useState('');
+  const cartModule = useCart();
+  const { sendAttachment } = cartModule
 
   const handleCepChange = (e: Event) => {
     setCep((e.target as HTMLInputElement).value);
@@ -27,7 +58,15 @@ const Popup = () => {
           }
         }
       })
-    }).then(res => res.json()).then(res => {
+    }).then(res => res.json()).then(async () => {
+      const address = await getAddressByPostalCode(cep);
+
+      await sendAttachment({attachment: "shippingData", body: {
+        clearAddressIfPostalCodeNotFound: false,
+        selectedAddresses: [ address ],
+        expectedOrderFormSections,
+      }});
+
       setTimeout(() => {
         window.location.reload();
       }, 1000);

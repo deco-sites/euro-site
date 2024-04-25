@@ -68,6 +68,7 @@ interface Props {
   itemListName?: string;
   layout?: Layout;
   sellerId?: string;
+  regionId?: string;
 }
 
 export const relative = (url: string) => {
@@ -89,17 +90,13 @@ function ProductCard({ product, preload, itemListName, layout, sellerId }: Props
   } = product;
   const productGroupID = isVariantOf?.productGroupID;
   const [front, back] = images ?? [];
-  const { listPrice, price, installment, seller } = useOffer(offers);
-  const { cartSimulation} = useCartSimulation(product.sku);
-  if(product.sku == "728"){
-    console.log("product", product)
-    console.log(cartSimulation, "CART SIM")
-    console.log(sellerId, "seller ID")
-  }
-  let skuSimulation = cartSimulation?.items[0];
-  let sellingPrice = sellerId ? (skuSimulation?.sellingPrice??0)/100 : price;
+  const { cartSimulation, isCartSimulationLoading } = useCartSimulation(product.sku, sellerId);
+  let { listPrice, price, installment, seller: sellerFromOffer } = useOffer(offers, cartSimulation.paymentData.installmentOptions);
 
-  
+  let skuSimulation = cartSimulation?.items[0];
+  price = sellerId && skuSimulation ? skuSimulation.sellingPrice / 100 : price;
+  listPrice = sellerId && skuSimulation ? skuSimulation.listPrice / 100 : listPrice;
+
   const possibilities = useVariantPossibilities(product);
   const variants = Object.entries(Object.values(possibilities)[0] ?? {});
   const clickEvent = {
@@ -163,7 +160,7 @@ function ProductCard({ product, preload, itemListName, layout, sellerId }: Props
           discount={price && listPrice ? listPrice - price : 0}
           productGroupId={product.isVariantOf?.productGroupID ?? ""}
           price={price as number}
-          sellerId={seller as string}
+          sellerId={sellerFromOffer as string}
           skuId={product.sku}
           label={l?.basics?.ctaText}
           classes={`max-lg:hidden ${
@@ -179,7 +176,7 @@ function ProductCard({ product, preload, itemListName, layout, sellerId }: Props
         discount={price && listPrice ? listPrice - price : 0}
         productGroupId={product.isVariantOf?.productGroupID ?? ""}
         price={price as number}
-        sellerId={seller as string}
+        sellerId={sellerFromOffer as string}
         skuId={product.sku}
         label={l?.basics?.ctaText}
         classes={`${addToCartButtonClassNames(layout?.basics?.ctaVariation)}`}
@@ -227,7 +224,7 @@ function ProductCard({ product, preload, itemListName, layout, sellerId }: Props
           aria-label="view product"
           class="contents relative"
         >
-          {listPrice2 !== price2 && (
+          {!isCartSimulationLoading && listPrice2 !== price2 && (
             <DiscountBadge
               price={price2}
               listPrice={listPrice2}
@@ -326,11 +323,11 @@ function ProductCard({ product, preload, itemListName, layout, sellerId }: Props
               >
                 {formatPrice(listPrice, offers!.priceCurrency!)}
               </p> */}
-              <p class="text-emphasis font-bold leading-4">
-                {formatPrice(sellingPrice, offers!.priceCurrency!)}
-              </p>
+              {!isCartSimulationLoading && <p class="text-emphasis font-bold leading-4">
+                {formatPrice(price, offers!.priceCurrency!)}
+              </p>}
             </div>
-            {l?.hide.installments
+            {l?.hide.installments || isCartSimulationLoading 
               ? ""
               : (
                 <div class="font-normal text-base-content mt-[5px] leading-4">
