@@ -93,7 +93,7 @@ const Popup = ({ savedPostalCode }: PopUpProps) => {
 
   return (
     <div className="postal-code-popup flex flex-col gap-2">
-      <label className="pl-10" htmlFor="postalCode">Informe seu CEP</label>
+      <label htmlFor="postalCode">Informe seu CEP</label>
       <div className="flex justify-between gap-8">
         <input
           id="postalCode"
