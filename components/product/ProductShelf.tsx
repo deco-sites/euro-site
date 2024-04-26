@@ -14,6 +14,7 @@ import { useOffer } from "$store/sdk/useOffer.ts";
 import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import { useId } from "preact/hooks";
+import useSellers from "$store/islands/UseSellers.tsx";
 
 export interface Props {
   products: LoaderReturnType<Product[] | null>;
@@ -44,6 +45,7 @@ function ProductShelf({
   showPaginationArrows,
 }: Props) {
   const id = useId();
+  const { sellerId, regionId } = useSellers();
 
   if (!products || products.length === 0) {
     return null;
@@ -83,6 +85,8 @@ function ProductShelf({
                 product={product}
                 itemListName={title}
                 layout={cardLayout}
+                sellerId={sellerId}
+                regionId={regionId}
               />
             </Slider.Item>
           ))}

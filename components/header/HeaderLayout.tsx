@@ -4,8 +4,11 @@ import Icon from "$store/components/ui/Icon.tsx";
 import Buttons from "$store/islands/HeaderButton.tsx";
 import Modals from "$store/islands/HeaderModals.tsx";
 import SearchBar from "$store/islands/HeaderSearchbar.tsx";
+import PopUp from "$store/islands/PopUp.tsx";
 import NavItem, { INavItem } from "./NavItem.tsx";
 import { megaMenuDefaultItems } from "./constants.ts";
+
+
 
 export interface Props {
   /**
@@ -45,6 +48,7 @@ function HeaderLayout(
             : null}
         </div>
         <div class="flex items-center w-auto lg:justify-between xl:gap-8 lg:gap-2">
+          <Buttons variant="postalCode" />
           <div class="flex items-center xl:gap-4 lg:gap-2">
             <Buttons variant="search" />
             <SearchBar searchbar={{ ...searchbar, variant: "mobile" }} />
@@ -68,7 +72,9 @@ function HeaderLayout(
         minicart={minicart}
         menu={{ items: navItems }}
       />
+
     </header>
+
   );
 }
 

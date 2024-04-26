@@ -13,11 +13,17 @@ import * as $InstitutionalPage from "./islands/InstitutionalPage.tsx";
 import * as $Newsletter from "./islands/Newsletter.tsx";
 import * as $NewsletterModal from "./islands/NewsletterModal.tsx";
 import * as $OutOfStock from "./islands/OutOfStock.tsx";
+import * as $PopUp from "./islands/PopUp.tsx";
+import * as $ProductDetails from "./islands/ProductDetails.tsx";
+import * as $ProductGallery from "./islands/ProductGallery.tsx";
 import * as $ProductImageZoom from "./islands/ProductImageZoom.tsx";
+import * as $ProductShelf from "./islands/ProductShelf.tsx";
 import * as $SearchControls from "./islands/SearchControls.tsx";
 import * as $ShippingSimulation from "./islands/ShippingSimulation.tsx";
 import * as $SliderJS from "./islands/SliderJS.tsx";
 import * as $Sort from "./islands/Sort.tsx";
+import * as $UseCartSimulation from "./islands/UseCartSimulation.tsx";
+import * as $UseSellers from "./islands/UseSellers.tsx";
 import * as $WishlistButton from "./islands/WishlistButton.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
@@ -36,11 +42,17 @@ const manifest = {
     "./islands/Newsletter.tsx": $Newsletter,
     "./islands/NewsletterModal.tsx": $NewsletterModal,
     "./islands/OutOfStock.tsx": $OutOfStock,
+    "./islands/PopUp.tsx": $PopUp,
+    "./islands/ProductDetails.tsx": $ProductDetails,
+    "./islands/ProductGallery.tsx": $ProductGallery,
     "./islands/ProductImageZoom.tsx": $ProductImageZoom,
+    "./islands/ProductShelf.tsx": $ProductShelf,
     "./islands/SearchControls.tsx": $SearchControls,
     "./islands/ShippingSimulation.tsx": $ShippingSimulation,
     "./islands/SliderJS.tsx": $SliderJS,
     "./islands/Sort.tsx": $Sort,
+    "./islands/UseCartSimulation.tsx": $UseCartSimulation,
+    "./islands/UseSellers.tsx": $UseSellers,
     "./islands/WishlistButton.tsx": $WishlistButton,
   },
   baseUrl: import.meta.url,
