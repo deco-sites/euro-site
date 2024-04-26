@@ -32,13 +32,15 @@ const expectedOrderFormSections = [
   "customData"
 ]
 
-const Popup = () => {
+type PopUpProps = {
+  savedPostalCode: string;
+}
+
+const Popup = ({ savedPostalCode }: PopUpProps) => {
   const loading = useSignal(false);
   const cartModule = useCart();
-  const { cart } = cartModule;
   const { sendAttachment } = cartModule;
   
-	const savedPostalCode = cart?.value?.shippingData?.address?.postalCode
   const postalCode = useSignal(formatPostalCode(savedPostalCode) ?? "");
 
   const handlePostalCodeChange = (e: any) => {

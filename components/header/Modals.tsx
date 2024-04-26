@@ -2,6 +2,8 @@ import Loading from "$store/components/ui/Loading.tsx";
 import Modal from "$store/components/ui/Modal.tsx";
 import { useUI } from "$store/sdk/useUI.ts";
 import { lazy, Suspense } from "preact/compat";
+import { useCart } from "deco-sites/std/packs/vtex/hooks/useCart.ts";
+import { useSignal } from "@preact/signals";
 
 import type { Props as MenuProps } from "$store/components/header/Menu.tsx";
 import { ICartProps } from "$store/components/minicart/Cart.tsx";
@@ -17,6 +19,14 @@ interface Props {
 
 function Modals({ menu, minicart }: Props) {
   const { displayCart, displayMenu, displayModalPostalCode } = useUI();
+  const cartModule = useCart();
+  const { cart, loading } = cartModule;
+  const localLoading = useSignal(true)
+	const savedPostalCode = cart?.value?.shippingData?.address?.postalCode
+  
+  if(displayModalPostalCode.value) {
+    localLoading.value = true
+  }
 
   const fallback = (
     <div class="flex justify-center items-center w-full h-full">
@@ -69,12 +79,13 @@ function Modals({ menu, minicart }: Props) {
         showHeader
         id="postal-code-modal"
         loading="lazy"
-        open={displayModalPostalCode.value}
+        open={(!loading.value && !savedPostalCode) ? localLoading.value : displayModalPostalCode.value}
         onClose={() => {
+          localLoading.value = false
           displayModalPostalCode.value = false;
         }}
         >
-        <PopUp />
+        <PopUp savedPostalCode={savedPostalCode} />
       </Modal>
     </>
   );

@@ -96,7 +96,7 @@ const Modal = ({
                 </span>
               </h1>
               <Button
-                class="btn btn-ghost p-0 flex justify-center w-12 h-4"
+                class="btn btn-ghost p-0 flex justify-center w-12 h-4 !outline-none"
                 onClick={onClose}
               >
                 <Icon
