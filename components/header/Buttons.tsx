@@ -108,7 +108,7 @@ function ModalPostalCodeButton() {
 
   const formattedPostalCode = formatPostalCode(postalCode) 
   return !loading.value ? (
-    <button class="text-[#e7527c] flex gap-2" onClick={handleModalPostalCode}>
+    <button class="text-[#e7527c] flex gap-2 items-center" onClick={handleModalPostalCode}>
       <Icon
         class="text-base-content"
         id="MapPin"

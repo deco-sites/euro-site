@@ -56,13 +56,13 @@ export default function useCartSimulation({ skuId, sellerId, regionId }: UseCart
 	useEffect(() => {
 
 		if(!cart.value || loading.value) return 
-		if(sellerId){
-			handleCartSimulation();
-		} else if((!postalCode && !sellerId) 
-			|| sellerId === undefined 
-		|| (postalCode && !sellerId && !regionId) ){
 
-			setIsCartSimulationLoading(false)
+		if(sellerId && regionId){
+			handleCartSimulation();
+		} else {
+			setTimeout(() => {
+				setIsCartSimulationLoading(false)
+			}, 2000)
 		}
 		return () => {
 			setIsCartSimulationLoading(true)

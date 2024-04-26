@@ -298,10 +298,11 @@ function Details({
   const { product, breadcrumbList } = page;
   const { offers } = product;
   
-  const { sellerId } = useSellers();
+  const { sellerId, regionId } = useSellers();
 
-  const { cartSimulation, isCartSimulationLoading } = useCartSimulation(product.sku, sellerId);
-
+  const { cartSimulation, isCartSimulationLoading } = useCartSimulation({
+    skuId: product.sku, sellerId, regionId,
+  });
   let { price, listPrice, seller, installments, availability } = useOffer(
     offers,
     cartSimulation.paymentData.installmentOptions
