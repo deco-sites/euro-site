@@ -19,7 +19,8 @@ export type Props = JSX.IntrinsicElements["dialog"] & {
   loading?: "lazy" | "eager";
   menuIcon?: AvailableIcons;
   showHeader?: boolean;
-  headerClass?: string
+  headerClass?: string;
+  modalClass?: string
 };
 
 const dialogStyles = {
@@ -50,6 +51,7 @@ const Modal = ({
   menuIcon,
   showHeader,
   headerClass,
+  modalClass,
   ...props
 }: Props) => {
   const lazy = useSignal(false);
@@ -81,7 +83,7 @@ const Modal = ({
       onClose={onClose}
     >
       <section
-        class={`w-full h-full flex bg-transparent ${sectionStyles[mode]}`}
+        class={`w-full flex bg-transparent ${sectionStyles[mode]} ${modalClass}`}
       >
         <div
           class={`w-full bg-base-100 flex flex-col max-h-full overflow-auto ${

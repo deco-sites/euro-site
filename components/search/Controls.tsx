@@ -46,6 +46,7 @@ function SearchControls(
         loading="lazy"
         title="Filtrar"
         mode="sidebar-left"
+        modalClass='h-full'
         open={open.value}
         onClose={() => {
           open.value = false;

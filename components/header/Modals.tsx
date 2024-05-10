@@ -45,6 +45,7 @@ function Modals({ menu, minicart }: Props) {
         showHeader={false}
         open={displayMenu.value}
         onClose={() => {}}
+        modalClass="h-full"
         class="backdrop:bg-base-content backdrop:opacity-70 h-full"
         headerClass="mx-5 mt-4 mb-[10.5px] lg:mx-10"
       >
@@ -60,6 +61,7 @@ function Modals({ menu, minicart }: Props) {
         mode="sidebar-right"
         showHeader
         id="minicart-modal"
+        modalClass="h-full"
         loading="lazy"
         open={displayCart.value}
         onClose={() => {
