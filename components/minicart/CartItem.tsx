@@ -25,13 +25,15 @@ function CartItem({ index, currency }: Props) {
   const { imageUrl, skuName, sellingPrice, listPrice, name, quantity } = item;
 
   const isGift = sellingPrice < 0.01;
-
-  const installmentOptions = cart.value?.paymentData?.installmentOptions
+  const cartInstallmentOptions = cart?.value?.paymentData?.installmentOptions?.length ? cart.value?.paymentData?.installmentOptions : []
+  const installmentOptions = cartInstallmentOptions
     ?.reduce((highest, current) => {
       const highestLength = highest?.installments?.length ?? 0;
       const currentLength = current?.installments?.length ?? 0;
 
       return currentLength > highestLength ? current : highest;
+    }, {
+      installments: []
     });
 
   const highestInstallment = installmentOptions?.installments?.slice(-1);
