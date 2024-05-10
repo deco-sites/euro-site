@@ -29,6 +29,7 @@ function ProductImageZoom({ images, width, height }: Props) {
       <Modal
         loading="lazy"
         mode="center"
+        modalClass="h-full"
         showHeader
         open={open.value}
         onClose={() => {
